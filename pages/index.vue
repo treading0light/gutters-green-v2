@@ -34,7 +34,10 @@
 
         <Services id="services" />
 
+        <About id="about" />
+
         <Contact id="contact" />
+
 
         <TabsWithContent :tabsData="tabsData" />
 
