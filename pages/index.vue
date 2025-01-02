@@ -34,6 +34,8 @@
 
         <Services id="services" />
 
+        <Contact id="contact" />
+
         <TabsWithContent :tabsData="tabsData" />
 
     </main>
