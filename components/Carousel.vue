@@ -11,7 +11,7 @@ const props = defineProps({
 <template>
     <div>
         <div class="carousel w-full">
-            <div v-for="(image, index) in images" :id="`img${index}`" class="carousel-item w-full">
+            <div v-for="(image, index) in images" :id="`img${index}`" class="carousel-item w-1/3">
                 <NuxtImg
                 :src="image"
                 class="w-full" />
@@ -19,7 +19,7 @@ const props = defineProps({
         </div>
 
         <div class="flex w-full justify-center gap-2 py-2">
-            <a v-for="(imnage, index) in images" :href="`#img${index}`" class="btn btn-xs">{{ index }}</a>
+            <a v-for="(image, index) in images" :href="`#img${index}`" class="btn btn-xs">{{ index }}</a>
         </div>
     </div>
 </template>

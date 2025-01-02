@@ -22,8 +22,11 @@ console.log(testPost._path, testPost.mainImage)
         <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <article v-for="(post, index) in posts" :key="`post${index}`" class="flex flex-col items-start justify-between">
           <div class="relative w-full">
-            <img :src="`/images/blog${post._path}/${post.mainImage}`" alt="" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
-            <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+            <NuxtLink :to="post._path">
+              <img :src="`/images${post._path}/${post.mainImage}`" alt="" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+            </NuxtLink>
+
           </div>
           <div class="max-w-xl">
             <div class="mt-8 flex items-center gap-x-4 text-xs">
@@ -32,10 +35,9 @@ console.log(testPost._path, testPost.mainImage)
             </div>
             <div class="group relative">
               <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                <a :href="post.href">
-                  <span class="absolute inset-0" />
+                <NuxtLink :to="post._path" class="">
                   {{ post.title }}
-                </a>
+                </NuxtLink>
               </h3>
               <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">{{ post.description }}</p>
             </div>
