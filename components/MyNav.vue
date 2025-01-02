@@ -1,5 +1,28 @@
+<script setup>
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+
+const tabs = [
+  "overview",
+  "services",
+  "about",
+  "contact"
+
+]
+
+const activeTab = ref('overview')
+
+const scrollToSection = (tab) => {
+  activeTab.value = tab
+  const section = document.getElementById(tab)
+  if (section) {
+    section.scrollIntoView({ behaviour: 'smooth'})
+  }
+}
+</script>
+
 <template>
-    <Disclosure as="nav" class="bg-white shadow " v-slot="{ open }">
+    <Disclosure as="nav" class="bg-white sticky top-0 z-50 shadow " v-slot="{ open }">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2">
         <div class="flex h-16 justify-between">
           <div class="flex">
@@ -8,7 +31,11 @@
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
               <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-              <NuxtLink to="/blog" class="inline-flex items-center border-b-2 border-primary px-1 pt-1 text-sm font-medium text-gray-900">Blog</NuxtLink>
+              <a v-for="(tab, index) in tabs" :href="`#${tab}`" @click="scrollToSection(tab)"
+              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
+               activeTab === tab ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
+               {{ tab.charAt(0).toUpperCase() + tab.slice(1) }}
+              </a>
             </div>
           </div>
           <div class="hidden sm:ml-6 sm:flex sm:items-center">
@@ -87,7 +114,3 @@
     </Disclosure>
   </template>
   
-  <script setup>
-  import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-  import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-  </script>
