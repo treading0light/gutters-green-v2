@@ -68,6 +68,8 @@
     },
   ]
 
+  console.log(features[0].before)
+
   const handleHover = (index) => {
     hoveredIndex.value = index
   }
