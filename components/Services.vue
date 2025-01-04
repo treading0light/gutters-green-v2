@@ -11,11 +11,12 @@
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             <div v-for="(feature, index) in features" :key="feature.name" class="flex flex-col">
-              <img :src="hoveredIndex === index ? feature.after : feature.before"
+              <BeforeAfter :before="feature.before" :after="feature.after" />
+              <!-- <img :src="hoveredIndex === index ? feature.after : feature.before"
               @mouseover="handleHover(index)"
               @mouseleave="handleLeave" 
               class="rounded-xl" 
-              />
+              /> -->
               <h2 class="mt-6 text-2xl font-semibold text-gray-900">{{ feature.name }}</h2>
               <!-- <dt class="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900">
                 <component class="size-5 flex-none text-secondary" aria-hidden="true" />
@@ -35,6 +36,8 @@
   </template>
   
   <script setup>
+import BeforeAfter from './BeforeAfter.vue';
+
 
   
   const hoveredIndex = ref(null);
