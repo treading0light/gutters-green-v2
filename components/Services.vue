@@ -35,6 +35,7 @@
   </template>
   
   <script setup>
+  const Hello = ""
   
   const hoveredIndex = ref(null);
 
