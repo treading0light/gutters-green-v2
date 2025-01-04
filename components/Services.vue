@@ -35,7 +35,9 @@
   </template>
   
   <script setup>
-  import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/vue/20/solid'
+
+  import image1 from '/images/before.jpg'
+  import image2 from '/images/after.jpg'
   
   const hoveredIndex = ref(null);
 
@@ -45,24 +47,24 @@
       description:
         'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
       href: '#',
-      before: 'images/before.jpg',
-      after: 'images/after.jpg',
+      before: image1,
+      after: image2,
     },
     {
       name: 'Gutter Repairs',
       description:
         'Gutter slope correcting, corner reasealing, gutter and downspout re-fastening, and more available with gutter cleaning service',
       href: '#',
-      before: 'images/before.jpg',
-      after: 'images/after.jpg',
+      before: image1,
+      after: image2,
     },
     {
       name: 'Gutter and Roof Cleaning',
       description:
         'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
       href: '#',
-      before: 'images/before.jpg',
-      after: 'images/after.jpg',
+      before: image1,
+      after: image2,
     },
   ]
 
