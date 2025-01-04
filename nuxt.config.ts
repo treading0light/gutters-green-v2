@@ -1,6 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindTypography from '@tailwindcss/typography'
-
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -10,9 +8,4 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/icon'
   ],
-  tailwindcss: {
-    config: {
-      plugins: [tailwindTypography],
-    }
-  },
 })

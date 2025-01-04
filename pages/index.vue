@@ -23,9 +23,9 @@
             <div class="hero-overlay bg-opacity-60"></div>
             <div class="hero-content text-neutral-content text-center">
                 <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Your Local Gutter Guy</h1>
+                <h1 class="mb-5 text-5xl font-bold">Reliable Gutter Solutions to Safeguard Your Home.</h1>
                 <p class="mb-5">
-                    Providing expert gutter services to the Seattle-Tacoma area and beyond
+                    The Gutters Green are your experts for Gutter Cleaning, Repairs, and Installation – Delivered with Care and Precision.
                 </p>
                 <button class="btn btn-primary">Get a free quote!</button>
                 </div>

@@ -8,11 +8,17 @@
         </div>
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            <div v-for="feature in features" :key="feature.name" class="flex flex-col">
-              <dt class="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900">
-                <component :is="feature.icon" class="size-5 flex-none text-secondary" aria-hidden="true" />
+            <div v-for="(feature, index) in features" :key="feature.name" class="flex flex-col">
+              <NuxtImg :src="hoveredIndex === index ? feature.after : feature.before"
+              @mouseover="handleHover(index)"
+              @mouseleave="handleLeave" 
+              class="rounded-xl" 
+              />
+              <h2 class="mt-6 text-2xl font-semibold text-gray-900">{{ feature.name }}</h2>
+              <!-- <dt class="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900">
+                <component class="size-5 flex-none text-secondary" aria-hidden="true" />
                 {{ feature.name }}
-              </dt>
+              </dt> -->
               <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
                 <p class="flex-auto">{{ feature.description }}</p>
                 <p class="mt-6">
@@ -29,27 +35,44 @@
   <script setup>
   import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/vue/20/solid'
   
+  const hoveredIndex = ref(null);
+
   const features = [
     {
       name: 'New Gutters Installed',
       description:
         'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
       href: '#',
-      icon: CloudArrowUpIcon,
+      before: 'images/before.jpg',
+      after: 'images/after.jpg',
     },
     {
       name: 'Gutter Repairs',
       description:
         'Gutter slope correcting, corner reasealing, gutter and downspout re-fastening, and more available with gutter cleaning service',
       href: '#',
-      icon: LockClosedIcon,
+      before: 'images/before.jpg',
+      after: 'images/after.jpg',
     },
     {
       name: 'Gutter and Roof Cleaning',
       description:
         'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
       href: '#',
-      icon: ArrowPathIcon,
+      before: 'images/before.jpg',
+      after: 'images/after.jpg',
     },
   ]
+
+  const handleHover = (index) => {
+    hoveredIndex.value = index
+  }
+
+  const handleLeave = () => {
+    hoveredIndex.value = null
+  }
+  
+  const images = features.map((feature) => ref(feature.before))
+  console.log(images)
+
   </script>
