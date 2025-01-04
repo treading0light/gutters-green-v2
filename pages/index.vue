@@ -20,7 +20,7 @@
     <main>
         <div class="hero min-h-screen" id="overview"
         style="background-image: url(images/landing-gutter-pic.jpg);">
-            <div class="hero-overlay bg-opacity-50"></div>
+            <div class="hero-overlay bg-opacity-60"></div>
             <div class="hero-content text-neutral-content text-center">
                 <div class="max-w-md">
                 <h1 class="mb-5 text-5xl font-bold">Reliable Gutter Solutions to Safeguard Your Home.</h1>

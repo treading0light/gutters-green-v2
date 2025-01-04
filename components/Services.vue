@@ -36,8 +36,8 @@
   
   <script setup>
 
-  import image1 from '/images/before.jpg'
-  import image2 from '/images/after.jpg'
+  const config = useRuntimeConfig();
+  const baseURL = config.app.baseURL;
   
   const hoveredIndex = ref(null);
 
@@ -47,24 +47,24 @@
       description:
         'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
       href: '#',
-      before: image1,
-      after: image2,
+      before: `${baseURL}images/before.jpg`,
+      after: `${baseURL}images/after.jpg`,
     },
     {
       name: 'Gutter Repairs',
       description:
         'Gutter slope correcting, corner reasealing, gutter and downspout re-fastening, and more available with gutter cleaning service',
       href: '#',
-      before: image1,
-      after: image2,
+      before: `${baseURL}images/before.jpg`,
+      after: `${baseURL}images/after.jpg`,
     },
     {
       name: 'Gutter and Roof Cleaning',
       description:
         'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
       href: '#',
-      before: image1,
-      after: image2,
+      before: `${baseURL}images/before.jpg`,
+      after: `${baseURL}images/after.jpg`,
     },
   ]
 
