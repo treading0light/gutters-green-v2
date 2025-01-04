@@ -35,7 +35,6 @@
   </template>
   
   <script setup>
-  import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/vue/20/solid'
   
   const hoveredIndex = ref(null);
 
