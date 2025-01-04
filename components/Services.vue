@@ -35,7 +35,7 @@
   </template>
   
   <script setup>
-  const Hello = ""
+  import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/vue/20/solid'
   
   const hoveredIndex = ref(null);
 
@@ -73,8 +73,5 @@
   const handleLeave = () => {
     hoveredIndex.value = null
   }
-  
-  const images = features.map((feature) => ref(feature.before))
-  console.log(images)
 
   </script>

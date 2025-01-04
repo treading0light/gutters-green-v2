@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindTypography from '@tailwindcss/typography';
 import daisyui from 'daisyui';
+
 export default {
   content: [],
   theme: {

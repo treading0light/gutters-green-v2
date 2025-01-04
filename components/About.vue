@@ -19,7 +19,7 @@
         <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
           <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
             <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-              <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">We’re changing the way people connect</h1>
+              <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Imma do your gutters so good!</h1>
               <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">With over 10 years experience in all things gutters, you can trust that all your needs will be met and questions answered.</p>
               <div class="mt-10 flex items-center gap-x-6">
                 <a href="#" class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Contact Us Now</a>

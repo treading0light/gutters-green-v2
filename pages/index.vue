@@ -19,7 +19,7 @@
 <template>
     <main>
         <div class="hero min-h-screen" id="overview"
-        style="background-image: url(images/landing-gutter-pic-dark.jpg);">
+        style="background-image: url(images/landing-gutter-pic.jpg);">
             <div class="hero-overlay bg-opacity-50"></div>
             <div class="hero-content text-neutral-content text-center">
                 <div class="max-w-md">

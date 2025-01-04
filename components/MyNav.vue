@@ -16,7 +16,8 @@ const scrollToSection = (tab) => {
   activeTab.value = tab
   const section = document.getElementById(tab)
   if (section) {
-    section.scrollIntoView({ behaviour: 'smooth'})
+    section.scrollIntoView({ behavior: 'smooth'})
+    history.pushState(null, '', `#${tab}`);
   }
 }
 </script>
@@ -31,7 +32,7 @@ const scrollToSection = (tab) => {
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
               <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-              <a v-for="(tab, index) in tabs" :href="`#${tab}`" @click="scrollToSection(tab)"
+              <a v-for="(tab, index) in tabs" :href="`#${tab}`" @click.prevent="scrollToSection(tab)"
               :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
                activeTab === tab ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
                {{ tab.charAt(0).toUpperCase() + tab.slice(1) }}
