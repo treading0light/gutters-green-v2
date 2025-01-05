@@ -20,3 +20,5 @@ I have 5 years experience designing and installing gutter systems as a site fore
 Cleaning gutters years after installation you will find issues such as improperly sloped gutters or downspout elbows squeezed to fit together. Having identified these issues on a regular basis, I use that experience when installing new gutter systems to ensure proper functionality throughout the life of your water remediation system.
 
 Few are my peers when it comes to setting up and using fall protection.
+
+:MdImg{:image="/images/landing-gutter-pic.jpg" :alt="This is a brief description of the image.This is a brief description of the image.This is a brief description of the image.This is a brief description of the image.This is a brief description of the image.This is a brief description of the image.This is a brief description of the image.This is a brief description of the image."}
