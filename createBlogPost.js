@@ -4,14 +4,12 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Helper function: Convert to kebab-case
 const toKebabCase = (str) =>
   str
     .replace(/([a-z])([A-Z])/g, "$1-$2") // Handle camelCase
     .replace(/[\s_]+/g, "-") // Replace spaces and underscores
     .toLowerCase();
 
-// Helper function: Convert to Title Case
 const toTitleCase = (str) =>
   str
     .toLowerCase()
@@ -40,13 +38,11 @@ if (!nameArg) {
     process.exit(1);
   }
 
-// Convert the name to kebab-case and Title Case
 const fileName = toKebabCase(nameArg);
 const title = toTitleCase(nameArg.replace(/-/g, " ")); // Replace dashes with spaces for title case
 
-// Paths
 const contentDir = path.join(__dirname, "content");
-const blogFilePath = path.join(contentDir, `${fileName}.md`);
+const blogFilePath = path.join(contentDir, `blog/${fileName}.md`);
 const imagesDir = path.join(__dirname, "public/images/blog", fileName);
 
 // Create the content directory if it doesn't exist
@@ -54,7 +50,6 @@ if (!fs.existsSync(contentDir)) {
   fs.mkdirSync(contentDir, { recursive: true });
 }
 
-// Create the Markdown file with frontmatter
 const frontmatter = `---
 title: ${title}
 mainImage: 
