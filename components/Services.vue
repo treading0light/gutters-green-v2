@@ -1,3 +1,43 @@
+<script setup>
+  const router = useRouter()
+
+  const features = [
+    {
+      name: 'New Gutters Installed',
+      description:
+        'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
+      image: '/images/before.jpg',
+      Link:''
+    },
+    {
+      name: 'Gutter Repairs',
+      description:
+        'Gutter slope correcting, corner reasealing, gutter and downspout re-fastening, and more available with gutter cleaning service',
+      image: '/images/before.jpg',
+      Link:''
+    },
+    {
+      name: 'Gutter and Roof Cleaning',
+      description:
+        'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
+      image: '/images/before.jpg',
+      Link:''
+    },
+  ]
+
+  const updateQueryWithHash = async (serviceName) => {
+    const slug = serviceName.toLowerCase().replace(/\s/g, '-')
+    await router.push({
+      hash: '#contact',
+      query: {
+        ...router.currentRoute.value.query,
+      services: [slug],
+      },
+    })
+  }
+
+</script>
+
 <template>
     <div class="bg-white py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -11,22 +51,17 @@
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             <div v-for="(feature, index) in features" :key="feature.name" class="flex flex-col">
-              <BeforeAfter :before="feature.before" :after="feature.after" />
-              <!-- <img :src="hoveredIndex === index ? feature.after : feature.before"
-              @mouseover="handleHover(index)"
-              @mouseleave="handleLeave" 
-              class="rounded-xl" 
-              /> -->
+              <img :src="feature.image" class="rounded-xl" />
               <h2 class="mt-6 text-2xl font-semibold text-gray-900">{{ feature.name }}</h2>
-              <!-- <dt class="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900">
-                <component class="size-5 flex-none text-secondary" aria-hidden="true" />
-                {{ feature.name }}
-              </dt> -->
               <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
                 <p class="flex-auto">{{ feature.description }}</p>
-                <p class="mt-6">
-                  <a :href="feature.href" class="text-sm/6 font-semibold text-secondary">Learn more <span aria-hidden="true">→</span></a>
-                </p>
+                <div class="flex justify-between mt-6">
+                  <p class="">
+                    <a :href="feature.href" class="text-sm/6 font-semibold text-secondary">Learn more <span aria-hidden="true">→</span></a>
+                  </p>
+                  <button class="btn btn-primary" @click="updateQueryWithHash(feature.name)">Book This Service</button>
+                </div>
+               
               </dd>
             </div>
           </dl>
@@ -35,48 +70,3 @@
     </div>
   </template>
   
-  <script setup>
-import BeforeAfter from './BeforeAfter.vue';
-
-
-  
-  const hoveredIndex = ref(null);
-
-  const features = [
-    {
-      name: 'New Gutters Installed',
-      description:
-        'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
-      href: '#',
-      before: '/images/before.jpg',
-      after: '/images/after.jpg',
-    },
-    {
-      name: 'Gutter Repairs',
-      description:
-        'Gutter slope correcting, corner reasealing, gutter and downspout re-fastening, and more available with gutter cleaning service',
-      href: '#',
-      before: '/images/before.jpg',
-      after: '/images/after.jpg',
-    },
-    {
-      name: 'Gutter and Roof Cleaning',
-      description:
-        'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
-      href: '#',
-      before: '/images/before.jpg',
-      after: '/images/after.jpg',
-    },
-  ]
-
-  console.log(features[0].before)
-
-  const handleHover = (index) => {
-    hoveredIndex.value = index
-  }
-
-  const handleLeave = () => {
-    hoveredIndex.value = null
-  }
-
-  </script>

@@ -23,12 +23,15 @@ const captilize = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
+const goHome = async () => {
+  activeTab.value = null
+  await navigateTo('/')
+}
+
 const handleTabChange = async (tab) => {
   activeTab.value = tab
-  console.log(tab, pageTabs)
 
   if (pageTabs.includes(tab)) {
-    console.log('navigating')
     await navigateTo(`/${tab}`)
     return
   }
@@ -57,7 +60,7 @@ const scrollToSection = (tab) => {
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2">
         <div class="flex h-16 justify-between">
           <div class="flex">
-            <div class="flex shrink-0 items-center">
+            <div @click.prevent="goHome" class="flex shrink-0 items-center">
               <MyLogo />
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">

@@ -1,16 +1,9 @@
 <template>
-    <NuxtLink to="/" class="flex flex-col hover:cursor-pointer">
-        <p style="" class="text-2xl font-bold">The Gutters</p>
+    <div to="/" class="flex flex-col hover:cursor-pointer">
+        <p class="text-2xl font-bold">The Gutters</p>
         <p class="text-4xl text-center font-bold">Green</p>
-    </NuxtLink>
+    </div>
 </template>
-
-<script>
-const goHome = async () => {
-    await navigateTo('/')
-    console.log('Navigated to home')
-}
-</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Ruslan+Display&display=swap');
