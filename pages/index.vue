@@ -1,4 +1,10 @@
 <script setup>
+    const scrollToElement = (id) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     const tabsData = [
         {
             title: 'Tab 1',
@@ -19,15 +25,15 @@
 <template>
     <main>
         <div class="hero min-h-screen" id="overview"
-        style="background-image: url(images/landing-gutter-pic.jpg);">
+        style="background-image: url(images/gutters-laying.jpg);">
             <div class="hero-overlay bg-opacity-60"></div>
             <div class="hero-content text-neutral-content text-center">
                 <div class="max-w-lg">
                     <h1 class="mb-5 text-5xl font-bold">Reliable Gutter Solutions to Safeguard Your Home.</h1>
-                    <p class="mb-5">
-                        The Gutters Green are your experts for Gutter Cleaning, Repairs, and Installation – Delivered with Care and Precision.
+                    <p class="mb-5 text-lg">
+                        The Gutters Green are your experts for Seamless Gutter installation and Repairs – Delivered with Care and Precision.
                     </p>
-                    <button class="btn btn-primary">Get a free quote!</button>
+                    <button @click="scrollToElement('contact')" class="btn btn-primary">Get a free quote!</button>
                 </div>
             </div>
         </div>
@@ -39,7 +45,7 @@
         <Contact id="contact" />
 
 
-        <TabsWithContent :tabsData="tabsData" />
+        <!-- <TabsWithContent :tabsData="tabsData" /> -->
 
     </main>
     

@@ -6,21 +6,21 @@
       name: 'New Gutters Installed',
       description:
         'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
-      image: '/images/before.jpg',
+      image: '/images/gutter-machine.jpg',
       Link:''
     },
     {
       name: 'Gutter Repairs',
       description:
         'Gutter slope correcting, corner reasealing, gutter and downspout re-fastening, and more available with gutter cleaning service',
-      image: '/images/before.jpg',
+      image: '/images/new-gutters.jpg',
       Link:''
     },
     {
       name: 'Gutter and Roof Cleaning',
       description:
         'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
-      image: '/images/before.jpg',
+      image: '/images/clean-roof.jpg',
       Link:''
     },
   ]
@@ -51,7 +51,11 @@
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             <div v-for="(feature, index) in features" :key="feature.name" class="flex flex-col">
-              <img :src="feature.image" class="rounded-xl" />
+
+              <div class="aspect-w-16 aspect-h-9">
+                <img :src="feature.image" class="rounded-xl object-cover" />
+              </div>
+
               <h2 class="mt-6 text-2xl font-semibold text-gray-900">{{ feature.name }}</h2>
               <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
                 <p class="flex-auto">{{ feature.description }}</p>
