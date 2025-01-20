@@ -28,8 +28,26 @@ const goHome = async () => {
   await navigateTo('/')
 }
 
+onMounted(() => {
+  const elements = tabs.map(id => document.getElementById(id)).filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              activeTab.value = entry.target.id
+          }
+      });
+  });
+  
+  elements.forEach(element => observer.observe(element));
+
+})
+
+
+
+
 const handleTabChange = async (tab) => {
-  activeTab.value = tab
+  // activeTab.value = tab
 
   if (pageTabs.includes(tab)) {
     await navigateTo(`/${tab}`)

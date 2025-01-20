@@ -10,7 +10,7 @@ const images = [
     <main class="bg-white">
 
         <ContentDoc v-slot="{ doc }">
-            <div class="bg-white py-24 sm:py-32">
+            <div class="bg-white py-10">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <NuxtImg :src="`/images${doc._path}/${doc.mainImage}`" 
                     class="aspect-video rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] lg:w-2/3 lg:mx-auto"/>

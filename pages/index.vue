@@ -5,21 +5,6 @@
             el.scrollIntoView({ behavior: 'smooth' });
         }
     }
-    const tabsData = [
-        {
-            title: 'Tab 1',
-            content: 'Content for Tab 1',
-        },
-        {
-            title: 'Tab 2',
-            content: 'Content for Tab 2',
-            images: ['https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp'],
-        },
-        {
-            title: 'Tab 3',
-            content: 'Content for Tab 3',
-        },
-    ]
 </script>
 
 <template>
@@ -43,9 +28,6 @@
         <About id="about" />
 
         <Contact id="contact" />
-
-
-        <!-- <TabsWithContent :tabsData="tabsData" /> -->
 
     </main>
     
