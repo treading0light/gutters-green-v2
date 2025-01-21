@@ -8,7 +8,9 @@
 </script>
 
 <template>
-    <main>
+    <main class="relative">
+        <PhoneModal />
+
         <div class="hero min-h-screen" id="overview"
         style="background-image: url(images/gutters-laying.jpg);">
             <div class="hero-overlay bg-opacity-60"></div>
@@ -28,6 +30,9 @@
         <About id="about" />
 
         <Contact id="contact" />
+
+
+
 
     </main>
     

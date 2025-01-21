@@ -11,5 +11,16 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/icon',
     '@vueuse/nuxt',
+    'nuxt-nodemailer'
   ],
+  nodemailer: {
+    from: '"Tony Green" <tonygreen@theguttersgreen.com>',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'tonygreen@theguttersgreen.com',
+      pass: ''
+    }
+  }
 })

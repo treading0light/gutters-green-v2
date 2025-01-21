@@ -13,6 +13,20 @@ const form = ref({
 })
 
 const errors = ref({})
+const errorMessage = ref('')
+const successMessage = ref('')
+const loading = ref(false)
+const resetForm = () => {
+  form.value = {
+    name: '',
+    email: '',
+    address: '',
+    city: '',
+    state: '',
+    phone: '',
+    message: ''
+  }
+}
 
 const formSchema = yup.object({
   name: yup
@@ -52,6 +66,7 @@ const validateForm = async () => {
   try {
     await formSchema.validate(form.value, { abortEarly: false });
     console.log('Form is valid:', form.value);
+    sendEmail()
   } catch (err) {
     // Handle validation errors
     errors.value = err.inner.reduce((acc, curr) => {
@@ -61,6 +76,29 @@ const validateForm = async () => {
     console.error('Validation errors:', errors);
   }
 };
+
+const sendEmail = async () => {
+  loading.value = true;
+  successMessage.value = '';
+  errorMessage.value = '';
+
+  try {
+    const response = await $fetch('/api/send-email', {
+      method: 'POST',
+      body: form.value,
+    });
+
+    if (response) {
+      successMessage.value = 'Email sent successfully!';
+      resetForm()
+    }
+  } catch (error) {
+    console.error('Error sending email:', error);
+    errorMessage.value = 'Failed to send email.';
+  } finally {
+    loading.value = false;
+  }
+}
 </script>
 
 <template>
@@ -171,13 +209,22 @@ const validateForm = async () => {
           </div>
 
           <div class="mt-8 flex justify-end">
+          
             <button type="submit"
             class="rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Send message</button>
           </div>
+          <span class="error">{{ errorMessage }}</span>
+          <span class="success">{{ successMessage }}</span>
 
         </div>
       </form>
     </div>
   </div>
 </template>
+
+<style scoped>
+.error {
+  color: red;
+}
+</style>
   
