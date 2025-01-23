@@ -128,14 +128,14 @@ const sendEmail = async () => {
                 <span class="sr-only">Address</span>
                 <BuildingOffice2Icon class="h-7 w-6 text-gray-400" aria-hidden="true" />
               </dt>
-              <dd><br />Federal Way, Wa 98023</dd>
+              <dd>Federal Way, Wa 98023</dd>
             </div>
             <div class="flex gap-x-4">
               <dt class="flex-none">
                 <span class="sr-only">Telephone</span>
                 <PhoneIcon class="h-7 w-6 text-gray-400" aria-hidden="true" />
               </dt>
-              <dd><a class="hover:text-gray-900" href="tel:+1 (555) 234-5678">+1 (555) 234-5678</a></dd>
+              <dd><a class="hover:text-gray-900" href="tel:+1 (253) 248-4670">253-248-4670</a></dd>
             </div>
             <div class="flex gap-x-4">
               <dt class="flex-none">
