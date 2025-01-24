@@ -3,7 +3,7 @@
 
   const features = [
     {
-      name: 'New Gutters Installed',
+      name: 'Seamless Gutter Installation',
       description:
         'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
       image: '/images/gutter-machine.jpg',
