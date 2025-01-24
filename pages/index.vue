@@ -5,6 +5,11 @@
             el.scrollIntoView({ behavior: 'smooth' });
         }
     }
+
+    defineOgImageComponent('Frame', {
+        title: "The Gutters Green",
+        description: "Seamless gutters for the greater Seattle-Tacoma area."
+    })
 </script>
 
 <template>

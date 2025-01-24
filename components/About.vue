@@ -48,12 +48,12 @@ const images = [
               <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Quality Gutters by Skilled Technicians</h1>
               <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">With over 10 years experience in all things gutters, you can trust that all your needs will be met and questions answered.</p>
               <div class="mt-10 flex items-center gap-x-6">
-                <a href="#" class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">Contact Us Now</a>
+                <a href="#contact" class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">Contact Us Now</a>
                 <a href="#" class="text-sm/6 font-semibold text-gray-900">Learn more about us <span aria-hidden="true">→</span></a>
               </div>
             </div>
 
-            <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+            <div class="mt-14 flex justify-center mr-32 sm:mr-0 sm:gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
 
               <div class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                 <div class="relative w-3/4 sm:w-full">
