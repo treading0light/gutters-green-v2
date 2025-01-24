@@ -35,14 +35,15 @@ const prevImage = () => {
 
 <template>
 
-<div >
+<div class="flex flex-col items-center" >
+  
     <!-- Caption -->
-    <div class="caption">
+    <!-- <div class="caption">
       <h2>{{ currentImage.caption }}</h2>
-    </div>
+    </div> -->
 
     <!-- Image Container -->
-     <div class="image-slider min-h-screen">
+     <!-- <div class="image-slider min-h-screen">
       <Transition>
         <img
             v-if="currentImage"
@@ -54,14 +55,14 @@ const prevImage = () => {
         
 
     </Transition>
-     </div>
+     </div> -->
     
 
     <!-- Navigation Controls -->
-    <div class="controls">
+    <!-- <div class="controls">
       <button @click="prevImage" :disabled="currentIndex === 0">Previous</button>
       <button @click="nextImage" :disabled="currentIndex === images.length - 1">Next</button>
-    </div>
+    </div> -->
   </div>
 </template>
 

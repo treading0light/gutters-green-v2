@@ -5,12 +5,12 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 const tabs = [
   "overview",
   "services",
-  "about",
   "contact"
 
 ]
 
 const pageTabs = [
+  "about",
   "faq",
   "blog",
 ]
