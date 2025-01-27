@@ -47,9 +47,10 @@ onMounted(() => {
 
 
 const handleTabChange = async (tab) => {
-  // activeTab.value = tab
+  
 
   if (pageTabs.includes(tab)) {
+    activeTab.value = tab
     await navigateTo(`/${tab}`)
     return
   }
@@ -60,14 +61,20 @@ const handleTabChange = async (tab) => {
   } else {
     await navigateTo(`/#${tab}`)
   }
+  activeTab.value = tab
 }
 
 const scrollToSection = (tab) => {
   const section = document.getElementById(tab)
+  const router = useRouter()
   if (section) {
     section.scrollIntoView({ behavior: 'smooth'})
-    history.pushState(null, '', `#${tab}`);
-    history.replaceState(history.state, '')
+    setTimeout(() => {
+      router.push({ hash: `#${tab}` });
+    }, 700);
+
+    // history.pushState(null, '', `#${tab}`);
+    // history.replaceState(history.state, '')
 
   }
 }

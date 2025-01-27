@@ -65,7 +65,7 @@ const formSchema = yup.object({
 const validateForm = async () => {
   try {
     await formSchema.validate(form.value, { abortEarly: false });
-    console.log('Form is valid:', form.value);
+    // console.log('Form is valid:', form.value);
     sendEmail()
   } catch (err) {
     // Handle validation errors
@@ -73,7 +73,7 @@ const validateForm = async () => {
       acc[curr.path] = curr.message;
       return acc;
     }, {});
-    console.error('Validation errors:', errors);
+    // console.error('Validation errors:', errors);
   }
 };
 
