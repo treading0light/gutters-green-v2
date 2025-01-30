@@ -7,7 +7,7 @@ const form = ref({
   email: '',
   address: '',
   city: '',
-  state: '',
+  state: 'WA',
   phone: '',
   message: ''
 })
@@ -142,7 +142,7 @@ const sendEmail = async () => {
                 <span class="sr-only">Email</span>
                 <EnvelopeIcon class="h-7 w-6 text-gray-400" aria-hidden="true" />
               </dt>
-              <dd><a class="hover:text-gray-900" href="mailto:hello@example.com">tonygreen@theguttersgreen.com</a></dd>
+              <dd><a class="hover:text-gray-900" href="mailto:tonygreen@theguttersgreen.com">tonygreen@theguttersgreen.com</a></dd>
             </div>
           </dl>
         </div>
