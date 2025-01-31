@@ -17,7 +17,7 @@
         <PhoneModal />
 
         <div class="hero min-h-screen" id="overview"
-        style="background-image: url(images/gutters-laying.jpg);">
+        style="background-image: url(images/gutters-laying.webp);">
             <div class="hero-overlay bg-opacity-60"></div>
             <div class="hero-content text-neutral-content text-center">
                 <div class="max-w-lg">
