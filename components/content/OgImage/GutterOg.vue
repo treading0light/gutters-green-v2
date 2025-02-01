@@ -58,7 +58,8 @@ const description = computed(() => (props.description || '').slice(0, 200))
         {{ description }}
       </p>
     </div>
-    <img :src="image" :alt="imageAlt" class="absolute rounded-xl top-[100px] right-[90px] w-[400px] h-[400px] object-cover" />
+
+    <img :src="image" :alt="imageAlt" class="absolute rounded-xl top-[100px] right-[50px] w-[400px] h-[400px] object-cover" />
 
     
   </div>

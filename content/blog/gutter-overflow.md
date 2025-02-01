@@ -1,6 +1,6 @@
 ---
 title: "Top 3 Causes of Gutter Overflow"
-mainImage: gutter-debris.webp
+mainImage: gutter-debris.jpg
 mainImageAlt: A gutter full of debris
 description: >
   Why your gutters overflow and what that means for your home.
