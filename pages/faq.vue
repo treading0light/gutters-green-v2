@@ -37,6 +37,11 @@ const faqs = [
 
 ]
 
+defineOgImageComponent('Frame', {
+        title: "The Gutters Green",
+        description: "FAQ about gutter installation and gutter cleaning"
+    })
+
 </script>
 
 <template>

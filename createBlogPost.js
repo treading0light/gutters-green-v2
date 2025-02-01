@@ -55,10 +55,10 @@ title: ${title}
 mainImage: 
 description: >
   exerpt or summary
-date: "Mar 16, 2020"
-datetime: "2020-03-16"
+date: "Jan 20, 2025"
+datetime: "2025-01-20"
 category:
-  title: "Marketing"
+  title: "Gutter"
   href: "#"
 author:
   name: "Tony Green"

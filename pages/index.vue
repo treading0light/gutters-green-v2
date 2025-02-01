@@ -6,9 +6,22 @@
         }
     }
 
-    defineOgImageComponent('Frame', {
+    useHead({
+    title: 'The Gutters Green',
+    meta: [
+        { property: 'og:url', content: 'https://www.theguttersgreen.com/' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Home' },
+        { property: 'og:description', content: 'seamless gutters for the greater Seattle-Tacoma area' },
+        { property: 'og:image', content: 'https://www.yourwebsite.com/path/to/og-image.jpg' },
+        { property: 'fb:app_id', content: 'your_facebook_app_id' }
+    ]
+    })
+
+    defineOgImageComponent('GutterOg', {
         title: "The Gutters Green",
-        description: "Seamless gutters for the greater Seattle-Tacoma area."
+        description: "Seamless gutters for the greater Seattle-Tacoma area.",
+        headline: "Free Quotes!",
     })
 </script>
 

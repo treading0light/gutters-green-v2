@@ -16,15 +16,15 @@ const { data: posts } = await useAsyncData('blog', () =>
     <div class="bg-white py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0">
-          <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Blog Section Coming Soon!</h2>
-          <p class="mt-2 text-lg/8 text-gray-600"></p>
+          <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">The Gutter Blog</h2>
+          <p class="mt-2 text-lg/8 text-gray-600">Throughout my many years of building and services gutters, I have acquired a wealth of knowledge that I would like to share here.</p>
         </div>
         <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 
           <article v-for="(post, index) in posts" :key="`post${index}`" class="flex flex-col items-start justify-between">
           <div class="relative w-full">
             <NuxtLink :to="post._path">
-              <img :src="`/images${post._path}/${post.mainImage}`" alt="" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
+              <img :src="`/images${post._path}/${post.mainImage}`" :alt="post.mainImageAlt" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
               <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" ></div>
             </NuxtLink>
 
