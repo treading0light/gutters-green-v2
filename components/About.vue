@@ -14,7 +14,7 @@ const images = [
   },
   {
     url: '/images/about/20210303_135935_HDR.jpg',
-    alt: ''
+    alt: 'Black 5k gutter, custom inside corner.'
   },
   {
     url: '/images/about/20211014_145632.jpg',

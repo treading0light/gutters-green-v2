@@ -13,8 +13,6 @@
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'Home' },
         { property: 'og:description', content: 'seamless gutters for the greater Seattle-Tacoma area' },
-        { property: 'og:image', content: 'https://www.yourwebsite.com/path/to/og-image.jpg' },
-        { property: 'fb:app_id', content: 'your_facebook_app_id' }
     ]
     })
 

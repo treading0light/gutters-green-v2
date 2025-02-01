@@ -8,6 +8,16 @@ const { data: doc } = await useAsyncData('blog/' + slug, () =>
     .findOne()
 );
 
+useHead({
+    title: 'FAQ',
+    meta: [
+        { property: 'og:url', content: `https://www.theguttersgreen.com/blog/${slug}` },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Blog Post' },
+        { property: 'og:description', content: 'An article from The Gutters Green' },
+    ]
+    })
+
 if (doc.value) {
     defineOgImageComponent('GutterOg', {
         headline: "The Gutters Green Blog",

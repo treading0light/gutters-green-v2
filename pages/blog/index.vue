@@ -1,14 +1,30 @@
 <script setup>
 
 
-// Fetch blog posts from the root `content/` directory
 const { data: posts } = await useAsyncData('blog', () =>
   queryContent('/')
     .without(['body'])
     .where({ published: true })
-    .sort({ date: -1 }) // Sort posts by date in descending order
+    .sort({ date: -1 })
     .find()
 );
+
+useHead({
+    title: 'The Gutters Green Blog',
+    meta: [
+        { property: 'og:url', content: 'https://www.theguttersgreen.com/about' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Blog' },
+        { property: 'og:description', content: 'Blog posts by The Gutters Green' },
+    ]
+    })
+
+    defineOgImageComponent('GutterOg', {
+        title: "The Gutters Green Blog",
+        description: "Blog posts on all things gutters!",
+        headline: "Seamless Gutter Installation",
+        image: "/images/gutters-laying.jpg"
+    })
 
 </script>
 

@@ -37,9 +37,21 @@ const faqs = [
 
 ]
 
-defineOgImageComponent('Frame', {
+useHead({
+    title: 'FAQ',
+    meta: [
+        { property: 'og:url', content: 'https://www.theguttersgreen.com/faq' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'FAQ' },
+        { property: 'og:description', content: 'Frequently asked questions' },
+    ]
+    })
+
+    defineOgImageComponent('GutterOg', {
         title: "The Gutters Green",
-        description: "FAQ about gutter installation and gutter cleaning"
+        description: "Frequently asked questions",
+        headline: "Seamless Gutter Installation",
+        image: "/images/gutter-carry.jpeg"
     })
 
 </script>

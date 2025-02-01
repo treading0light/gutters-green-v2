@@ -1,4 +1,20 @@
 <script setup>
+    useHead({
+    title: 'About The Gutters Green',
+    meta: [
+        { property: 'og:url', content: 'https://www.theguttersgreen.com/about' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'About' },
+        { property: 'og:description', content: 'Information about The Gutters Green, LLC.' },
+    ]
+    })
+
+    defineOgImageComponent('GutterOg', {
+        title: "The Gutters Green",
+        description: "Read our story!",
+        headline: "Seamless Gutter Installation",
+        image: "/images/gutter-carry.jpeg"
+    })
 </script>
 
 <template>
