@@ -5,6 +5,23 @@ import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/vue/24/outline'
 
 const faqs = [
 {
+    question: "What types of gutters do you install?",
+    answer:
+    "We install seamless 5k gutter systems in a variety of colors.",
+},
+{
+  question: "How long does it take to install new gutters?",
+  answer: "1-2 days in most cases, but larger projects may be different."
+},
+{
+  question: "Can you repair damaged gutters?",
+  answer: "Absolutely! We can fix leaks, sagging sections, disconnected downspouts, and other common gutter issues. Repair services available to add on to gutter cleaning service."
+},
+{
+  question: "Are your gutters custom-fit?",
+  answer: "Yes, all of our gutters are measured and cut on-site to ensure a perfect fit for your home."
+},
+{
     question: "How often should I have my gutters cleaned?",
     answer:
     "We recommend cleaning your gutters at least twice a year: once in the spring and once in the fall. However, if you have overhanging trees or experience frequent storms, you may need more frequent cleanings.",
@@ -16,23 +33,6 @@ const faqs = [
 {
   question: "Can you clean gutters on tall or multi-story homes?",
   answer: "Yes, we have the equipment and expertise to safely clean gutters on multi-story homes and commercial buildings."
-},
-{
-    question: "What types of gutters do you install?",
-    answer:
-    "We install seamless 5k gutter systems in a variety of colors.",
-},
-{
-  question: "How long does it take to install new gutters?",
-  answer: "Yes, we install high-quality gutters designed to protect your property and enhance its appearance."
-},
-{
-  question: "Can you repair damaged gutters?",
-  answer: "Absolutely! We can fix leaks, sagging sections, disconnected downspouts, and other common gutter issues. Repair services available to add on to gutter cleaning service."
-},
-{
-  question: "Are your gutters custom-fit?",
-  answer: "Yes, all of our gutters are measured and cut on-site to ensure a perfect fit for your home."
 }
 
 ]
