@@ -1,24 +1,24 @@
 <script setup>
 const images = [
   {
-    url: '/images/about/20201014_131258.jpg',
-    alt: ''
+    url: '/images/about/ds-through-deck.jpg',
+    alt: 'A white downspout passing through a custom cut hole in a wooden deck.'
   },
   {
-    url: '/images/about/20201125_145809.jpg',
-    alt: ''
+    url: '/images/about/hand-miter.jpg',
+    alt: 'A professionally hand cut miter outside corner, white 5k gutter.'
   },
   {
     url: '/images/about/20210823_173823_HDR.jpg',
-    alt: ''
+    alt: 'A white 5k gutter and downspout on a blue house with shake siding.'
   },
   {
     url: '/images/about/20210303_135935_HDR.jpg',
     alt: 'Black 5k gutter, custom inside corner.'
   },
   {
-    url: '/images/about/20211014_145632.jpg',
-    alt: ''
+    url: '/images/about/staged-black-gutters.jpg',
+    alt: '5k black gutters staged for installation.'
   }
 ]
 
@@ -57,30 +57,30 @@ const images = [
 
               <div class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                 <div class="relative w-3/4 sm:w-full">
-                  <img src="/images/about/20201014_131258.jpg" alt="" class="hidden sm:block aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy" />
+                  <img :src="images[0].url" :alt="images[0].alt" class="hidden sm:block aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy" />
                   <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
               </div>
 
               <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                 <div class="relative w-3/4 sm:w-full">
-                  <img src="/images/about/20201125_145809.jpg" alt="" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy" />
+                  <img :src="images[1].url" :alt="images[1].alt" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy" />
                   <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 <div class="relative w-3/4 sm:w-full">
-                  <img src="/images/about/20210823_173823_HDR.jpg" alt="" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy"  />
+                  <img :src="images[2].url" :alt="images[2].alt" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy"  />
                   <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
               </div>
 
               <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                 <div class="relative w-3/4 sm:w-full">
-                  <img src="/images/about/20210303_135935_HDR.jpg" alt="" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy" />
+                  <img :src="images[3].url" :alt="images[3].alt" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy" />
                   <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 <div class="relative w-3/4 sm:w-full">
-                  <img src="/images/about/20211014_145632.jpg" 
-                  alt="" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy" />
+                  <img :src="images[4].url" :alt="images[4].alt"
+                   class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" loading="lazy" />
                   <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
               </div>
