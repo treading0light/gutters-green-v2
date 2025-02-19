@@ -49,7 +49,7 @@ const images = [
               <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">With over 10 years experience in all things gutters, you can trust that all your needs will be met and questions answered.</p>
               <div class="mt-10 flex items-center gap-x-6">
                 <a href="#contact" class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">Contact Us Now</a>
-                <a href="#" class="text-sm/6 font-semibold text-gray-900">Learn more about us <span aria-hidden="true">→</span></a>
+                <NuxtLink to="/about" class="text-sm/6 font-semibold text-gray-900">Learn more about us <span aria-hidden="true">→</span></NuxtLink>
               </div>
             </div>
 

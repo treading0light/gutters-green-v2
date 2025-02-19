@@ -9,7 +9,7 @@ const { data: doc } = await useAsyncData('blog/' + slug, () =>
 );
 
 useHead({
-    title: 'FAQ',
+    title: 'Blog Post',
     meta: [
         { property: 'og:url', content: `https://www.theguttersgreen.com/blog/${slug}` },
         { property: 'og:type', content: 'website' },

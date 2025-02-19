@@ -11,8 +11,8 @@ category:
   href: "#"
 author:
   name: "Tony Green"
-  role: "Co-Founder / CTO"
-  href: "#"
+  role: "Founder"
+  href: "/about"
   imageUrl: "images/myself.webp"
 published: true
 ---
@@ -82,4 +82,4 @@ Adding an Additional Downspout:
 
 ## Conclusion
 
-Even when gutters are installed professionally, maintenance is required to keep them functioning properly. If you're in need of new gutters, gutter cleaning, or gutter repairs and modifications, don't hesitate to [reach out!](https://www.theguttersgreen.com/#contact)
+Even when gutters are installed professionally, maintenance is required to keep them functioning properly. If you're in need of new gutters, gutter cleaning, or gutter repairs and modifications, don't hesitate to *[reach out!](https://www.theguttersgreen.com/#contact)*

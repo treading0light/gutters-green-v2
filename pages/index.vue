@@ -1,4 +1,6 @@
 <script setup>
+import FBPost from './FBPost.vue';
+
     const scrollToElement = (id) => {
         const el = document.getElementById(id);
         if (el) {
@@ -41,7 +43,11 @@
             </div>
         </div>
 
-        <Services id="services" />
+        <!-- <ServiceAreaMap /> -->
+
+        <FBPost />
+        
+        <MiniService id="services" />
 
         <About id="about" />
 
