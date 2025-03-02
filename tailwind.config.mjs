@@ -3,7 +3,8 @@ import tailwindTypography from '@tailwindcss/typography';
 import daisyui from 'daisyui';
 
 export default {
-  content: [],
+  content: ['./pages/**/*.vue', './components/**/*.vue'],
+  purge: true,
   theme: {
     extend: {},
   },
