@@ -23,7 +23,7 @@ if (doc.value) {
         headline: "The Gutters Green Blog",
         title: doc.value.title,
         description: doc.value.description,
-        image: `/images/blog/${slug}/${doc.value.mainImage}`,
+        image: `/images/blog/${slug}/${doc.value.thumbnail}`,
         imageAlt: doc.value.mainImageAlt
     })
 
@@ -56,4 +56,5 @@ if (doc.value) {
         <CTA />
     </main>
   </template>
+
   

@@ -6,21 +6,24 @@
       name: 'Seamless Gutter Installation',
       description:
         'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
-      image: '/images/gutter-machine.jpg',
+      image: '/images/gutter-machine.webp',
+      alt: 'A white 5k gutter coming out of the gutter machine with a cup of tea and a jet boiler above it.',
       Link:''
     },
     {
       name: 'Gutter Repairs',
       description:
         'Gutter slope correcting, corner reasealing, gutter and downspout re-fastening, and more available with gutter cleaning service',
-      image: '/images/new-gutters.jpg',
+      image: '/images/new-gutters.webp',
+      alt: 'A blue house with new white 5k gutters.',
       Link:''
     },
     {
       name: 'Gutter and Roof Cleaning',
       description:
         'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
-      image: '/images/clean-roof.jpg',
+      image: '/images/before.webp',
+      alt: 'A roof that has been recently cleaned of moss.',
       Link:''
     },
   ]
@@ -53,7 +56,7 @@
             <div v-for="(feature, index) in features" :key="feature.name" class="flex flex-col">
 
               <div class="aspect-w-16 aspect-h-9">
-                <img :src="feature.image" class="rounded-xl object-cover" />
+                <img :src="feature.image" :alt="feature.description" class="rounded-xl object-cover" />
               </div>
 
               <h2 class="mt-6 text-2xl font-semibold text-gray-900">{{ feature.name }}</h2>

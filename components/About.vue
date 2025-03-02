@@ -1,23 +1,23 @@
 <script setup>
 const images = [
   {
-    url: '/images/about/ds-through-deck.jpg',
+    url: '/images/about/ds-through-deck.webp',
     alt: 'A white downspout passing through a custom cut hole in a wooden deck.'
   },
   {
-    url: '/images/about/hand-miter.jpg',
+    url: '/images/about/hand-miter.webp',
     alt: 'A professionally hand cut miter outside corner, white 5k gutter.'
   },
   {
-    url: '/images/about/20210823_173823_HDR.jpg',
+    url: '/images/about/clean-install.webp',
     alt: 'A white 5k gutter and downspout on a blue house with shake siding.'
   },
   {
-    url: '/images/about/20210303_135935_HDR.jpg',
+    url: '/images/about/inside-corner.webp',
     alt: 'Black 5k gutter, custom inside corner.'
   },
   {
-    url: '/images/about/staged-black-gutters.jpg',
+    url: '/images/about/staged-black-gutters.webp',
     alt: '5k black gutters staged for installation.'
   }
 ]

@@ -21,8 +21,9 @@
           </div>
           <div class="flex items-start justify-center lg:justify-start lg:order-first">
             <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0uuLRnms4UwG55e8W3cDe5nMxjD8xxEHbeALrvuUKcBPXZSeLDHjq5T1LCpjGJnhXl%26id%3D61551824939216&show_text=true&width=500" 
-            width="500" height="601" style="border:none;overflow:hidden" 
-            scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+             style="border:none;overflow:hidden" 
+            scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            class="w-full h-[100%]">
             </iframe>
           </div>
         </div>
@@ -31,6 +32,7 @@
   </template>
   
   <script setup>
+  
   import { WrenchIcon, ChatBubbleLeftEllipsisIcon, CameraIcon} from '@heroicons/vue/20/solid'
   
   const features = [
