@@ -1,4 +1,4 @@
-<script setup defer>
+<script setup>
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/vue/24/outline'
 import * as yup from 'yup'
 
