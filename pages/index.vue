@@ -44,8 +44,6 @@ import FBPost from './FBPost.vue';
         </div>
 
         <!-- <ServiceAreaMap /> -->
-
-        <FBPost />
         
         <MiniService id="services" />
 
