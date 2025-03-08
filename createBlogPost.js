@@ -54,6 +54,7 @@ const frontmatter = `---
 title: ${title}
 mainImage: 
 thumbnail:
+ogimage:
 mainImageAlt:
 description: >
   exerpt or summary

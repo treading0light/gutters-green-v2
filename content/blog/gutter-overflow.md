@@ -2,6 +2,7 @@
 title: "Top 3 Causes of Gutter Overflow"
 mainImage: gutter-debris.webp
 thumbnail: gutter-debris-sm.webp
+ogimage: gutter-debris.jpg
 mainImageAlt: A gutter full of debris
 description: >
   Why your gutters overflow and what that means for your home.
@@ -45,7 +46,7 @@ Downspouts are an essential component to your gutter system, they are the pipe t
 If your downspouts clog frequently, several factors might be contributing:
 
 1. **Debris Accumulation at the Elbow:**
-  ![A Dissassembled downspout packed with debris](/images/blog/gutter-overflow/dshead-clog.webp "A lot of derbris")
+![A Dissassembled downspout packed with debris](/images/blog/gutter-overflow/dshead-clog.webp "A lot of derbris")
     
     - The first point of clogging typically occurs at the initial elbow of the downspout. This area naturally traps leaves, twigs, and other debris. Fortunately, this type of clog is relatively easy for a professional gutter technician to disassemble and clear.
 2. **Internal Obstructions Due to Installation Practices:**

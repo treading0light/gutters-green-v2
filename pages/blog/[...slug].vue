@@ -23,7 +23,7 @@ if (doc.value) {
         headline: "The Gutters Green Blog",
         title: doc.value.title,
         description: doc.value.description,
-        image: `/images/blog/${slug}/${doc.value.thumbnail}`,
+        image: `/images/blog/${slug}/${doc.value.ogimage}`,
         imageAlt: doc.value.mainImageAlt
     })
 

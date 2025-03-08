@@ -1,5 +1,4 @@
 <script setup>
-import FBPost from './FBPost.vue';
 
     const scrollToElement = (id) => {
         const el = document.getElementById(id);
@@ -27,7 +26,7 @@ import FBPost from './FBPost.vue';
 
 <template>
     <main class="relative">
-        <PhoneModal />
+        <LazyPhoneModal />
 
         <div class="hero min-h-screen" id="overview"
         style="background-image: url(images/gutters-laying.webp);">
@@ -42,14 +41,12 @@ import FBPost from './FBPost.vue';
                 </div>
             </div>
         </div>
-
-        <!-- <ServiceAreaMap /> -->
         
-        <MiniService id="services" />
+        <LazyMiniService id="services" />
 
-        <About id="about" />
+        <LazyAbout id="about" />
 
-        <Contact id="contact" />
+        <LazyContact id="contact" />
 
 
 
