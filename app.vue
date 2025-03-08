@@ -2,6 +2,6 @@
   <div class="bg-white">
     <MyNav />
     <NuxtPage />
-    <MyFooter />
+    <LazyMyFooter />
   </div>
 </template>
