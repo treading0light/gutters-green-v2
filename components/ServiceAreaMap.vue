@@ -3,8 +3,6 @@
   </template>
   
   <script setup>
-  import { onMounted } from 'vue';
-  import { useHead } from '#app';
   import L from 'leaflet';
   
   // Using useHead for setting meta tags dynamically

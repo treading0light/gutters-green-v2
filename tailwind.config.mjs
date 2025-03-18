@@ -4,7 +4,6 @@ import daisyui from 'daisyui';
 
 export default {
   content: ['./pages/**/*.vue', './components/**/*.vue'],
-  purge: true,
   theme: {
     extend: {},
   },

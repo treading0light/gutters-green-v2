@@ -9,7 +9,8 @@
         </div>
         <div class="flex flex-col items-start">
           <p class="mt-8 text-center text-sm/6 text-gray-400 md:order-1 md:mt-0">&copy; 2024 The Gutters Green, Inc. All rights reserved.</p>
-          <p class="mt-8 text-center text-sm/6 text-gray-400 md:order-1 md:mt-0"> <strong>UBI#:</strong> 605 675 148</p>
+          <p class="mt-8 text-center text-sm/6 text-gray-400 md:order-1 md:mt-0"> <strong>LIC#: </strong><NuxtLink to="https://secure.lni.wa.gov/verify/Results.aspx#%7B%22pageNumber%22%3A0%2C%22SearchType%22%3A2%2C%22SortColumn%22%3A%22Rank%22%2C%22SortOrder%22%3A%22desc%22%2C%22pageSize%22%3A10%2C%22ContractorTypeFilter%22%3A%5B%5D%2C%22SessionID%22%3A%221e5vjtj3z515ijkav40uhodw%22%2C%22SAW%22%3A%22%22%2C%22LicenseId%22%3A%22GUTTEGG750DQ%22%2C%22searchCat%22%3A%22LicenseId%22%2C%22searchText%22%3A%22GUTTEGG750DQ%22%2C%22firstSearch%22%3A1%7D"
+          class="text-info">GUTTEGG750DQ</NuxtLink></p>
         </div>
 
 
