@@ -18,14 +18,14 @@
       alt: 'A blue house with new white 5k gutters.',
       Link:''
     },
-    {
-      name: 'Gutter and Roof Cleaning',
-      description:
-        'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
-      image: '/images/before.webp',
-      alt: 'A roof that has been recently cleaned of moss.',
-      Link:''
-    },
+    // {
+    //   name: 'Gutter and Roof Cleaning',
+    //   description:
+    //     'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
+    //   image: '/images/before.webp',
+    //   alt: 'A roof that has been recently cleaned of moss.',
+    //   Link:''
+    // },
   ]
 
   const updateQueryWithHash = async (serviceName) => {
