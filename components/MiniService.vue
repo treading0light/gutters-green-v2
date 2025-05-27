@@ -5,10 +5,11 @@
     {
       name: 'Seamless Gutter Installation',
       description:
-        'Full gutter system design and installation. We custom make 5K and 6K profile gutters to perfectly fit your home and your needs. ',
+        'Full gutter system design and installation. We custom make 5K profile gutters to perfectly fit your home and your needs. ',
       image: '/images/gutter-machine.webp',
       alt: 'A white 5k gutter coming out of the gutter machine with a cup of tea and a jet boiler above it.',
-      Link:''
+      linkText:'',
+      href: ''
     },
     {
       name: 'Gutter Repairs',
@@ -16,16 +17,18 @@
         'Gutter slope correcting, corner reasealing, gutter and downspout re-fastening, and more available with gutter cleaning service',
       image: '/images/new-gutters.webp',
       alt: 'A blue house with new white 5k gutters.',
-      Link:''
+      linkText:'',
+      href: ''
     },
-    // {
-    //   name: 'Gutter and Roof Cleaning',
-    //   description:
-    //     'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
-    //   image: '/images/before.webp',
-    //   alt: 'A roof that has been recently cleaned of moss.',
-    //   Link:''
-    // },
+    {
+      name: 'Gutter and Roof Cleaning',
+      description:
+        'Roof air blow cleaning, moss removal, gutter cleaning, downspout clog removal',
+      image: '/images/before.webp',
+      alt: 'A roof that has been recently cleaned of moss.',
+      linkText:'Learn more about roof cleaning',
+      href: '/roof-cleaning'
+    },
   ]
 
   const updateQueryWithHash = async (serviceName) => {
@@ -64,7 +67,7 @@
                 <p class="flex-auto">{{ feature.description }}</p>
                 <div class="flex justify-between mt-6">
                   <p class="">
-                    <a :href="feature.href" class="text-sm/6 font-semibold text-secondary">Learn more <span aria-hidden="true">→</span></a>
+                    <a :href="feature.href" class="text-sm/6 font-semibold text-secondary">{{ feature.linkText }} <span aria-hidden="true">→</span></a>
                   </p>
                   <button class="btn btn-primary" @click="updateQueryWithHash(feature.name)">Book This Service</button>
                 </div>

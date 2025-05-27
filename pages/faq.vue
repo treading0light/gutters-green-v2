@@ -1,6 +1,7 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/vue/24/outline'
+import { schema } from 'nuxt-og-image/content'
 
 
 const faqs = [
@@ -21,21 +22,37 @@ const faqs = [
   question: "Are your gutters custom-fit?",
   answer: "Yes, all of our gutters are measured and cut on-site to ensure a perfect fit for your home."
 },
-{
-    question: "How often should I have my gutters cleaned?",
-    answer:
-    "We recommend cleaning your gutters at least twice a year: once in the spring and once in the fall. However, if you have overhanging trees or experience frequent storms, you may need more frequent cleanings.",
-},
-{
-  question: "Do I need to be home for gutter cleaning?",
-  answer: "No, you don’t need to be home as long as we have access to your gutters and your grounds for cleanup."
-},
-{
-  question: "Can you clean gutters on tall or multi-story homes?",
-  answer: "Yes, we have the equipment and expertise to safely clean gutters on multi-story homes and commercial buildings."
-}
+// {
+//     question: "How often should I have my gutters cleaned?",
+//     answer:
+//     "We recommend cleaning your gutters at least twice a year: once in the spring and once in the fall. However, if you have overhanging trees or experience frequent storms, you may need more frequent cleanings.",
+// },
+// {
+//   question: "Do I need to be home for gutter cleaning?",
+//   answer: "No, you don’t need to be home as long as we have access to your gutters and your grounds for cleanup."
+// },
+// {
+//   question: "Can you clean gutters on tall or multi-story homes?",
+//   answer: "Yes, we have the equipment and expertise to safely clean gutters on multi-story homes and commercial buildings."
+// }
 
 ]
+
+const schemaFAQ = () => {
+  a = []
+  for (faq in faqs) {
+    a.push({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    })
+  }
+  console.log(a)
+  return a
+}
 
 useHead({
     title: 'FAQ',
@@ -44,7 +61,17 @@ useHead({
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'FAQ' },
         { property: 'og:description', content: 'Frequently asked questions' },
-    ]
+    ],
+    script: [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": schemaFAQ
+          })
+        }
+      ]
     })
 
     defineOgImageComponent('GutterOg', {

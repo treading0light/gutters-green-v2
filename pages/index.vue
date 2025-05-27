@@ -14,7 +14,28 @@
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'Home' },
         { property: 'og:description', content: 'seamless gutters for the greater Seattle-Tacoma area' },
-    ]
+    ],
+    script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "The Gutters Green",
+        "url": "https://www.theguttersgreen.com",
+        "telephone": "+12532484670",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Federal Way",
+          "addressRegion": "WA",
+          "postalCode": "98023"
+        },
+        "areaServed": "King County, Pierce County",
+        "description": "10+ years of experience installing and maintaining 5k gutter systems in Western Washington.",
+        "image": "https://www.theguttersgreen.com/logo.png"
+      })
+    }
+  ]
     })
 
     defineOgImageComponent('GutterOg', {
@@ -41,6 +62,8 @@
                 </div>
             </div>
         </div>
+
+        <LazyReviews />
         
         <LazyMiniService id="services" />
 
