@@ -1,5 +1,5 @@
 <script setup>
-const currentStep = ref(1)
+const currentStep = ref(0)
 const steps = [
     {
         "title": "Why Roof Moss Cleaning Is Essential",
@@ -16,7 +16,7 @@ const steps = [
     {
         "title": "Blowing Off Moss and Cleaning Gutters",
         "text": "Once the bulk of moss has been loosened, we use a blower to clear all remaining moss fragments, leaves, and other debris from the roof. This is followed by a full gutter cleaning to ensure your drainage system is working properly and won’t back up during heavy rains.",
-        "image": "/images/before-after/webp/rca4.webp",
+        "image": "/images/behttps://images.unsplash.com/photo-1598257006458-087169a1f08d?&auto=format&fit=crop&crop=center&w=560&h=560&q=90fore-after/webp/rca4.webp",
         "alt": "A roof that has just been cleaned of all it's moss."
     },
     {
@@ -42,32 +42,37 @@ const nextStep = () => {
 
 <template>
 
-        <section class="relative isolate overflow-hidden bg-gradient-to-b from-gray-100/20 pt-14" id="method">
-            <div class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-gray-600/10 ring-1 ring-gray-50 sm:-mr-80 lg:-mr-96" aria-hidden="true" />
-            <div class="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                <h2 class="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">Our Roof Cleaning Methods</h2>
-
-                <div v-for="(step, index) in steps"
-                :key="index"
-                v-show="currentStep === index"
-                class="transition-opacity duration-700">
-                {{ index }}
-
-                    <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-                        <h3 class="max-w-2xl text-balance text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl lg:col-span-2 xl:col-auto">{{ step.title }}</h3>
-                        <p class="text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">{{ step.text }}</p>
-                        <div class="mt-10 flex items-center gap-x-6">
-                            <button v-if="currentStep => steps.length" @click="nextStep" class="btn btn-primary">Next</button>
-                            <a v-else href="#contact" class="btn btn-primary" >Contact Us</a>
-                            <!-- <a href="#" class="text-sm/6 font-semibold text-gray-900">Learn more <span aria-hidden="true">→</span></a> -->
-                        </div>
-                    </div>
-                    <img :src="step.image" :alt="step.alt" class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36" />
-                </div>
-
-                </div>
+  <section class="overflow-hidden bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+      <div class="max-w-4xl">
+        <p class="text-base/7 font-semibold text-primary">Roof Cleaning</p>
+        <h2 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">The Gutters Green Method</h2>
+      </div>
+      <section class="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
+        <div class="lg:pr-8">
+          <h3 class="text-pretty text-3xl font-semibold tracking-tight text-gray-900">{{ steps[currentStep].title }}</h3>
+          <p class="mt-6 text-2xl text-gray-600">{{ steps[currentStep].text }}</p>
+          <button class="btn btn-primary mt-10">Next</button>
+        </div>
+        <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+          <div class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
+            <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
+              <img alt="" :src="steps[0].image" class="block size-full object-cover"
+              :class="currentStep === 0 ? 'opacity-60' : ''" />
             </div>
-            <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" />
-        </section>
+            <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
+              <img alt="" :src="steps[1].image" />
+            </div>
+            <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
+              <img alt="" :src="steps[2].image" class="block size-full object-cover" />
+            </div>
+            <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
+              <img alt="" :src="steps[3].image" class="block size-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </section>
 </template>

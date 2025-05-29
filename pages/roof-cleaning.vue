@@ -38,7 +38,7 @@
     </section>
     <LazyMethodStory />
 
-    <LazyContact />
+    <LazyContact id="contact" />
 
         
     </main>
