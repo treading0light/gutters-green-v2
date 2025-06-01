@@ -57,7 +57,7 @@ const nextStep = () => {
 
         </div>
         <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
-          <div class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
+          <div class="-mx-8 grid grid-cols-4 gap-4 sm:-mx-16 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
             <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-transform duration-300">
               <img alt="" :src="steps[0].image" class="block size-full object-cover transition duration-300"
               :class="currentStep === 0 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
