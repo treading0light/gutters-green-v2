@@ -4,31 +4,31 @@ const steps = [
     {
         "title": "Why Roof Moss Cleaning Is Essential",
         "text": "Over time, moss buildup can trap moisture against your roof, accelerating wear, loosening shingles, and even leading to costly leaks or structural damage. Regular moss removal not only extends the life of your roof, but also helps maintain your home’s curb appeal and resale value.",
-        "image": "/images/before-after/webp/rcb4.webp",
+        "image": "/images/before-after/square/rcb4.webp",
         "alt": "A roof with a bad moss infestation"
     },
     {
         "title": "Gentle Brushing to Remove Most Moss",
         "text": "We begin by carefully brushing the roof using specialized, non-damaging tools to physically remove the majority of moss growth. This step addresses approximately 95% of the moss and is done delicately to protect your roofing materials while effectively clearing the surface.",
-        "image": "/images/before-after/webp/rcd.webp",
+        "image": "/images/before-after/square/rcd.webp",
         "alt": "A roof with moss being scrubbed off using a brush"
     },
     {
         "title": "Blowing Off Moss and Cleaning Gutters",
         "text": "Once the bulk of moss has been loosened, we use a blower to clear all remaining moss fragments, leaves, and other debris from the roof. This is followed by a full gutter cleaning to ensure your drainage system is working properly and won’t back up during heavy rains.",
-        "image": "/images/behttps://images.unsplash.com/photo-1598257006458-087169a1f08d?&auto=format&fit=crop&crop=center&w=560&h=560&q=90fore-after/webp/rca4.webp",
+        "image": "/images/before-after/square/rca4.webp",
         "alt": "A roof that has just been cleaned of all it's moss."
     },
     {
         "title": "Applying an Effective Moss Treatment",
         "text": "We finish the service by applying a powdered moss treatment to key areas of the roof. This treatment activates with rainfall, dissolving gradually into the surface. It helps remove any residual moss and continues to prevent new growth for months to come.",
-        "image": "/images/before-after/webp/treatment.webp",
+        "image": "/images/before-after/square/treatment.webp",
         "alt": "A roof with moss treatment applied strategically. "
     },
     {
         "title": "Ongoing Roof Maintenance",
         "text": "To keep your roof in top condition, we recommend a full cleaning and moss treatment at least once a year. However, homes surrounded by trees or located in shaded, moist areas may benefit from more frequent debris removal to avoid buildup between treatments.",
-        "image": "/images/before-after/webp/treatment.webp",
+        "image": "/images/before-after/square/treatment.webp",
         "alt": "A roof with moss treatment applied strategically. "
     },
 
@@ -52,22 +52,27 @@ const nextStep = () => {
         <div class="lg:pr-8">
           <h3 class="text-pretty text-3xl font-semibold tracking-tight text-gray-900">{{ steps[currentStep].title }}</h3>
           <p class="mt-6 text-2xl text-gray-600">{{ steps[currentStep].text }}</p>
-          <button class="btn btn-primary mt-10">Next</button>
+          <button v-if="currentStep < steps.length -1" @click="nextStep()" class="btn btn-primary mt-10">Next</button>
+          <a v-if="currentStep === 4" href="#contact" class="btn btn-primary mt-10">Get Free Quote</a>
+
         </div>
         <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
           <div class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
-            <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
-              <img alt="" :src="steps[0].image" class="block size-full object-cover"
-              :class="currentStep === 0 ? 'opacity-60' : ''" />
+            <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-transform duration-300">
+              <img alt="" :src="steps[0].image" class="block size-full object-cover transition duration-300"
+              :class="currentStep === 0 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
             </div>
             <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
-              <img alt="" :src="steps[1].image" />
+              <img alt="" :src="steps[1].image" class="block size-full object-cover transition duration-300"
+              :class="currentStep === 1 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
             </div>
             <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
-              <img alt="" :src="steps[2].image" class="block size-full object-cover" />
+              <img alt="" :src="steps[2].image" class="block size-full object-cover transition duration-300"
+              :class="currentStep === 2 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
             </div>
             <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
-              <img alt="" :src="steps[3].image" class="block size-full object-cover" />
+              <img alt="" :src="steps[3].image" class="block size-full object-cover transition duration-300"
+              :class="currentStep === 3 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
             </div>
           </div>
         </div>
