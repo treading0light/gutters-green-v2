@@ -1,3 +1,86 @@
+<script setup>
+const backgrounds = [
+    '/images/before-wide.webp',
+    '/images/after-wide.JPG'
+]
+
+const images = [
+    '/images/before.webp',
+    '/images/after.JPG',
+    '/images/before-after/webp/rcb1.webp',
+    '/images/before-after/webp/rca1.webp',
+    '/images/before-after/webp/rcb2.webp',
+    '/images/before-after/webp/rca2.webp',
+    '/images/before-after/webp/rcb3.webp',
+    '/images/before-after/webp/rca3.webp',
+]
+
+
+
+const currentIndex = ref(0)
+let interval
+
+onMounted(() => {
+    interval = setInterval(() => {
+        currentIndex.value = (currentIndex.value + 1) % images.length
+    }, 3000)
+})
+
+onUnmounted(() => {
+    clearInterval(interval)
+})
+
+useHead({
+  title: 'Roof Cleaning Service | The Gutters Green',
+  meta: [
+      { property: 'og:url', content: 'https://www.theguttersgreen.com/roof-cleaning' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Professional Roof Cleaning In Seattle And Tacoma' },
+      { property: 'og:description', content: 'Protect your home with expert roof cleaning and moss removal services by The Gutters Green' },
+  ],
+  script: [
+  {
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "The Gutters Green",
+      "url": "https://www.theguttersgreen.com/roof-cleaning",
+      "telephone": "+12532484670",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Federal Way",
+        "addressRegion": "WA",
+        "postalCode": "98023"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.theguttersgreen.com/roof-cleaning"
+      },
+      "areaServed": "King County, Pierce County",
+      "description": "Protect your home with expert roof cleaning and moss removal services by The Gutters Green",
+      "image": "https://www.theguttersgreen.com/logo.png",
+      "service": {
+        "@type": "Service",
+        "name": "Gutter Cleaning",
+        "areaServed": [
+          { "@type": "Place", "name": "King County" },
+          { "@type": "Place", "name": "Pierce County" }
+        ],
+        "description": "We provide roof and gutter cleaning services using safe, ladder-based methods, debris removal, gutter flushing, and moss prevention treatments."
+      }
+    })
+  }
+  ]
+})
+
+defineOgImageComponent('GutterOg', {
+  title: "Roof Moss Removal & Treatment",
+  description: "Safe, effective roof cleaning in the greater Seattle–Tacoma area. Extend your roof’s life and protect your home.",
+  headline: "The Gutters Green"
+})
+</script>
+
 <template>
     <main>
     <LazyPhoneModal />
@@ -44,38 +127,7 @@
     </main>
 </template>
 
-<script setup>
-const backgrounds = [
-    '/images/before-wide.webp',
-    '/images/after-wide.JPG'
-]
 
-const images = [
-    '/images/before.webp',
-    '/images/after.JPG',
-    '/images/before-after/webp/rcb1.webp',
-    '/images/before-after/webp/rca1.webp',
-    '/images/before-after/webp/rcb2.webp',
-    '/images/before-after/webp/rca2.webp',
-    '/images/before-after/webp/rcb3.webp',
-    '/images/before-after/webp/rca3.webp',
-]
-
-
-
-const currentIndex = ref(0)
-let interval
-
-onMounted(() => {
-    interval = setInterval(() => {
-        currentIndex.value = (currentIndex.value + 1) % images.length
-    }, 3000)
-})
-
-onUnmounted(() => {
-    clearInterval(interval)
-})
-</script>
 
 <style scoped>
 .fade-enter-active, .fade-leave-active {

@@ -38,6 +38,11 @@ const nextStep = () => {
     currentStep.value++
     console.log(currentStep.value)
 }
+
+const prevStep = () => {
+  currentStep.value--
+  console.log(currentStep.value)
+}
 </script>
 
 <template>
@@ -52,6 +57,7 @@ const nextStep = () => {
         <div class="lg:pr-8">
           <h3 class="text-pretty text-3xl font-semibold tracking-tight text-gray-900">{{ steps[currentStep].title }}</h3>
           <p class="mt-6 text-2xl text-gray-600">{{ steps[currentStep].text }}</p>
+          <button v-if="currentStep < steps.length -1" @click="prevStep()" class="btn btn-primary mt-10">Next</button>
           <button v-if="currentStep < steps.length -1" @click="nextStep()" class="btn btn-primary mt-10">Next</button>
           <a v-if="currentStep === 4" href="#contact" class="btn btn-primary mt-10">Get Free Quote</a>
 
@@ -59,19 +65,19 @@ const nextStep = () => {
         <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
           <div class="-mx-8 grid grid-cols-4 gap-4 sm:-mx-16 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
             <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 transition-transform duration-300">
-              <img alt="" :src="steps[0].image" class="block size-full object-cover transition duration-300"
+              <img :alt="steps[0].alt" :src="steps[0].image" class="block size-full object-cover transition duration-300"
               :class="currentStep === 0 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
             </div>
             <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
-              <img alt="" :src="steps[1].image" class="block size-full object-cover transition duration-300"
+              <img :alt="steps[1].alt" :src="steps[1].image" class="block size-full object-cover transition duration-300"
               :class="currentStep === 1 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
             </div>
             <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
-              <img alt="" :src="steps[2].image" class="block size-full object-cover transition duration-300"
+              <img :alt="steps[2].alt" :src="steps[2].image" class="block size-full object-cover transition duration-300"
               :class="currentStep === 2 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
             </div>
             <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
-              <img alt="" :src="steps[3].image" class="block size-full object-cover transition duration-300"
+              <img :alt="steps[3].alt" :src="steps[3].image" class="block size-full object-cover transition duration-300"
               :class="currentStep === 3 || currentStep === 4 ? 'opacity-100 scale-110' : 'opacity-30 scale-100'" />
             </div>
           </div>
