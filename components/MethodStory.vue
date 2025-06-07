@@ -36,12 +36,10 @@ const steps = [
 
 const nextStep = () => {
     currentStep.value++
-    console.log(currentStep.value)
 }
 
 const prevStep = () => {
   currentStep.value--
-  console.log(currentStep.value)
 }
 </script>
 
