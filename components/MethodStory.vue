@@ -57,9 +57,9 @@ const prevStep = () => {
         <div class="lg:pr-8">
           <h3 class="text-pretty text-3xl font-semibold tracking-tight text-gray-900">{{ steps[currentStep].title }}</h3>
           <p class="mt-6 text-2xl text-gray-600">{{ steps[currentStep].text }}</p>
-          <button v-if="currentStep < steps.length -1" @click="prevStep()" class="btn btn-primary mt-10">Next</button>
-          <button v-if="currentStep < steps.length -1" @click="nextStep()" class="btn btn-primary mt-10">Next</button>
-          <a v-if="currentStep === 4" href="#contact" class="btn btn-primary mt-10">Get Free Quote</a>
+          <button v-if="currentStep > 0" @click="prevStep()" class="btn btn-primary mt-10">Prev</button>
+          <button v-if="currentStep < steps.length -1" @click="nextStep()" class="btn btn-primary mt-10 ml-10">Next</button>
+          <a v-if="currentStep === 4" href="#contact" class="btn btn-primary mt-10 ml-10">Get Free Quote</a>
 
         </div>
         <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
