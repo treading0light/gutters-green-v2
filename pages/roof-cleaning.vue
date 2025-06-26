@@ -97,7 +97,7 @@ defineOgImageComponent('GutterOg', {
               <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Professional Roof Cleaning In Federal Way, WA.</h1>
               <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">Roof moss removal, roof blow, gutter cleaning and repairs</p>
               <div class="mt-10 flex items-center gap-x-6">
-                <a href="#" class="btn btn-primary">Free Quote!</a>
+                <a href="#contact" class="btn btn-primary">Free Quote!</a>
                 <a href="#method" class="text-sm/6 font-semibold text-gray-900">Learn about our cleaning method <span aria-hidden="true">→</span></a>
               </div>
             </div>

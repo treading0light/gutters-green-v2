@@ -21,17 +21,17 @@ published: true
 
 Your gutters play a crucial role in directing rainwater away from your home, protecting your foundation and surrounding landscape from potential water damage. While gutters are designed to handle a significant amount of debris, problems arise when water flow is obstructed. Here are the top three causes of gutter overflow:
 
-**[Full Gutters](#full-gutters)**
+- **[Full Gutters](#full-gutters)**
 
-**[Clogged Downspouts](#clogged-downspouts)**
+- **[Clogged Downspouts](#clogged-downspouts)**
 
-**[Improperly Sloped Gutters](#improperly-sloped-gutters)**
+- **[Improperly Sloped Gutters](#improperly-sloped-gutters)**
 
 ## Full Gutters
 ![A gutter filled with debris with a healthy weed growing out of it](/images/blog/gutter-overflow/gutter-garden.webp)
 
 In Washington State, our majestic trees add to the natural beauty of our surroundings, but they also shed leaves, twigs, and other debris that easily accumulate in your gutters. Regular gutter cleaning is essential to prevent clogs that can block the flow of water and cause dangerous overflow, leading to water damage and costly repairs.
-
+Throughout my many years of building and services gutters, I have acquired a wealth of knowledge that I would like to share here.
 **What to do about full gutters**
 
   - Have your gutters cleaned regularly.

@@ -1,12 +1,11 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { Bars3Icon, BellIcon, HandThumbDownIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
 const tabs = [
-  "overview",
-  "services",
   "contact"
-
+  
 ]
 
 const pageTabs = [
@@ -16,6 +15,7 @@ const pageTabs = [
 ]
 
 const activeTab = ref('overview')
+const serviceMenu = ref(null)
 
 const captilize = (str) => {
   if (str === 'faq') return 'FAQ'
@@ -47,23 +47,19 @@ onMounted(() => {
 
 
 const handleTabChange = async (tab) => {
-  
-
-  if (pageTabs.includes(tab)) {
-    activeTab.value = tab
-    await navigateTo(`/${tab}`)
-    return
-  }
-
-  const currentRoute = useRoute()
-  if (currentRoute.path === '/') {
-    scrollToSection(tab)
-  } else {
-    await navigateTo(`/#${tab}`)
-  }
   activeTab.value = tab
+  if (pageTabs.includes(tab)) {
+    await navigateTo(`/${tab}`)
+  } else if (tab === 'contact') {
+    scrollToSection(tab)
+  }
 }
 
+const servicePage = async (path) => {
+  activeTab.value = 'services'
+  serviceMenu.value?.removeAttribute('open')
+  await navigateTo(path)
+}
 const scrollToSection = (tab) => {
   const section = document.getElementById(tab)
   const router = useRouter()
@@ -72,9 +68,6 @@ const scrollToSection = (tab) => {
     setTimeout(() => {
       router.push({ hash: `#${tab}` });
     }, 700);
-
-    // history.pushState(null, '', `#${tab}`);
-    // history.replaceState(history.state, '')
 
   }
 }
@@ -90,11 +83,34 @@ const scrollToSection = (tab) => {
             </div>
 
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-              <a v-for="(tab, index) in tabs" :href="`#${tab}`" @click.prevent="handleTabChange(tab)"
+
+              <!-- <button @click="handleTabChange('services')"
+              popovertarget="popover-1" style="anchor-name:--anchor-1"
               :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
-               activeTab === tab ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
-               {{ captilize(tab) }}
+               activeTab === 'services' ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
+               Services
+              </button>
+
+              <ul class="dropdown menu w-52 rounded-box bg-gray-200 shadow-sm"
+                popover id="popover-1" style="position-anchor:--anchor-1">
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+              </ul> -->
+
+              <details ref="serviceMenu" class="dropdown dropdown-bottom"
+              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
+               activeTab === 'services' ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
+                <summary tabindex="0" role="button" class="m-1">Services</summary>
+                <ul tabindex="0" class="dropdown-content menu bg-white rounded-box z-1 w-52 p-5 shadow-lg">
+                  <li><a href="/gutter-installation" @click.prevent="servicePage('/gutter-installation')">Gutter Installation</a></li>
+                  <li><a href="/roof-cleaning" @click.prevent="servicePage('/roof-cleaning')">Roof Cleaning</a></li>
+                </ul>
+              </details>
+
+              <a href="#contact"
+              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
+               activeTab === 'contact' ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
+               Contact
               </a>
 
               <a v-for="(tab, index) in pageTabs" @click.prevent="handleTabChange(tab)"
@@ -122,13 +138,7 @@ const scrollToSection = (tab) => {
       </div>
   
       <DisclosurePanel class="sm:hidden">
-        <div class="space-y-1 pb-3 pt-2">
-          <!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
-          <DisclosureButton v-for="tab in tabs" @click.prevent="handleTabChange(tab)" :class="['block border-l-4  py-2 pl-3 pr-4  font-medium',
-          activeTab === tab ? 'border-primary bg-secondary text-gray-800' : 'border-transparent text-base text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700' ]">
-            {{ captilize(tab) }}
-          </DisclosureButton>        
-        </div>
+
 
         <div class="border-t border-b border-gray-200 pb-3 pt-4">
           <div class="mt-3 space-y-1">
@@ -139,6 +149,21 @@ const scrollToSection = (tab) => {
             </DisclosureButton>
           </div>
         </div>
+
+        <div class="space-y-1 pb-3 pt-2">
+          <!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
+          <DisclosureButton disabled :class="['block border-l-4  py-2 pl-3 pr-4  font-bold',
+          activeTab === 'services' ? 'border-primary bg-secondary text-gray-800' : 'border-transparent text-base text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700' ]">
+          Services
+          </DisclosureButton>     
+          <DisclosureButton @click="servicePage('gutter-installation')"
+            class="block border-l-4  py-2 pl-3 pr-4  ml-10 font-medium border-transparent text-base text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">
+            Gutter Installation</DisclosureButton>   
+          <DisclosureButton @click="servicePage('roof-cleaning')"
+            class="block border-l-4  py-2 pl-3 pr-4  ml-10 font-medium border-transparent text-base text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">
+            Roof Cleaning</DisclosureButton> 
+        </div>
+
 
       </DisclosurePanel>
     </Disclosure>

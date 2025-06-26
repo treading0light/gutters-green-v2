@@ -8,8 +8,8 @@
         'Full gutter system design and installation. We custom make 5K profile gutters to perfectly fit your home and your needs. ',
       image: '/images/gutter-machine.webp',
       alt: 'A white 5k gutter coming out of the gutter machine with a cup of tea and a jet boiler above it.',
-      linkText:'',
-      href: ''
+      linkText:'Learn more about gutter installation',
+      href: '/gutter-installation'
     },
     {
       name: 'Gutter Repairs',
@@ -18,7 +18,7 @@
       image: '/images/new-gutters.webp',
       alt: 'A blue house with new white 5k gutters.',
       linkText:'',
-      href: ''
+      href: '#'
     },
     {
       name: 'Gutter and Roof Cleaning',
@@ -59,7 +59,7 @@
             <div v-for="(feature, index) in features" :key="feature.name" class="flex flex-col">
 
               <div class="aspect-w-16 aspect-h-9">
-                <img :src="feature.image" :alt="feature.description" class="rounded-xl object-cover" />
+                <NuxtLink :to="feature.href"><img :src="feature.image" :alt="feature.description" class="rounded-xl object-cover" /> </NuxtLink>
               </div>
 
               <h2 class="mt-6 text-2xl font-semibold text-gray-900">{{ feature.name }}</h2>

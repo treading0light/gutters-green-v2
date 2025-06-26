@@ -46,7 +46,12 @@ const images = [
           <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
             <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
               <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Quality Gutters by Skilled Technicians</h1>
-              <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">With over 10 years experience in all things gutters, you can trust that all your needs will be met and questions answered.</p>
+              <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
+                With over 10 years of experience in <strong>gutter installation</strong>, <strong>gutter repair</strong>, 
+                and <strong>gutter cleaning</strong>, we provide reliable service homeowners can count on. 
+                Whether you're upgrading to <strong>seamless gutters</strong>, fixing a leak, or scheduling routine maintenance, 
+                we make sure every detail is handled with care. Our team takes the time to walk you through your options,
+                 answer your questions, and ensure your home is protected from <strong>water damage</strong> year-round.</p>
               <div class="mt-10 flex items-center gap-x-6">
                 <a href="#contact" class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">Contact Us Now</a>
                 <NuxtLink to="/about" class="text-sm/6 font-semibold text-gray-900">Learn more about us <span aria-hidden="true">→</span></NuxtLink>

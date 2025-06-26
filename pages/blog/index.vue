@@ -33,7 +33,12 @@ useHead({
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0">
           <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">The Gutter Blog</h2>
-          <p class="mt-2 text-lg/8 text-gray-600">Throughout my many years of building and services gutters, I have acquired a wealth of knowledge that I would like to share here.</p>
+          <p class="mt-2 text-lg/8 text-gray-600">
+          Throughout my many years of <strong>building</strong> and <strong>servicing gutters</strong>, 
+          I have acquired a wealth of knowledge that I would like to share here. 
+          From <strong>gutter installation tips</strong> to <strong>maintenance advice</strong> and 
+          <strong>common repair solutions</strong>, this blog is your resource for protecting your home and getting
+           the most out of your gutter system.</p>
         </div>
         <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 
