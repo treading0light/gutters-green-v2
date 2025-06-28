@@ -67,7 +67,7 @@ useHead({
           { "@type": "Place", "name": "King County" },
           { "@type": "Place", "name": "Pierce County" }
         ],
-        "description": "We provide roof and gutter cleaning services using safe, ladder-based methods, debris removal, gutter flushing, and moss prevention treatments."
+        "description": "We provide roof and gutter cleaning services using advanced saftey techniques, debris removal, clog removal, and moss prevention treatments."
       }
     })
   }

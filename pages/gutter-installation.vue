@@ -38,6 +38,56 @@ const chooseCorner = (corner) => {
   contactMessage.value = options[corner] || 'Unknown Corner Type'
   el.scrollIntoView({ behavior: 'smooth' })
 }
+
+useHead({
+  title: 'Seamless Gutter Installation Service | The Gutters Green',
+  meta: [
+      { property: 'og:url', content: 'https://www.theguttersgreen.com/gutter-installation' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Professional Gutter Installation In Seattle And Tacoma' },
+      { property: 'og:description', content: 'Protect your home with expert gutter installation services by The Gutters Green' },
+  ],
+  script: [
+  {
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "The Gutters Green",
+      "url": "https://www.theguttersgreen.com/gutter-installation",
+      "telephone": "+12532484670",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Federal Way",
+        "addressRegion": "WA",
+        "postalCode": "98023"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.theguttersgreen.com/gutter-installation"
+      },
+      "areaServed": "King County, Pierce County",
+      "description": "Protect your home with expert roof cleaning and moss removal services by The Gutters Green",
+      "image": "https://www.theguttersgreen.com/logo.png",
+      "service": {
+        "@type": "Service",
+        "name": "Gutter Installation",
+        "areaServed": [
+          { "@type": "Place", "name": "King County" },
+          { "@type": "Place", "name": "Pierce County" }
+        ],
+        "description": "We provide expert gutter installation services, made on site to fit your home."
+      }
+    })
+  }
+  ]
+})
+
+defineOgImageComponent('GutterOg', {
+  title: "Seamless Gutter Installation & Replacement",
+  description: "Protect your foundation and enhance curb appeal with professionally installed 5K gutters in the Seattle–Tacoma area.",
+  headline: "The Gutters Green"
+})
 </script>
 
 <template>
@@ -82,9 +132,10 @@ const chooseCorner = (corner) => {
     </section>
     <section class="my-20">
       <h2 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Choose Your Corner Style!</h2>
-      <ScrollReveal>
-            <div class="flex w-full flex-col md:flex-row justify-around items-center md:items-start mt-10">
+      <div class="flex w-full flex-col md:flex-row justify-around items-center md:items-start mt-10">
+      
         <div class="card rounded-none bg-white w-96 md:w-1/3 text-gray-900">
+        <ScrollReveal> 
           <figure>
             <img
               class="rounded-xl"
@@ -100,11 +151,13 @@ const chooseCorner = (corner) => {
               <button @click="chooseCorner('hand-cut')" class="btn btn-primary">Choose This Corner</button>
             </div>
           </div>
+        </ScrollReveal>
         </div>
 
         <div class="divider divider-primary text-primary md:divider-horizontal">OR</div>
 
         <div class="card rounded-none bg-white w-96 md:w-1/3 text-gray-900">
+        <ScrollReveal>
           <figure>
             <img
               class="rounded-xl"
@@ -120,10 +173,9 @@ const chooseCorner = (corner) => {
               <button @click="chooseCorner('strip-miter')" class="btn btn-primary">Choose This Corner</button>
             </div>
           </div>
+        </ScrollReveal>
         </div>    
       </div>
-      </ScrollReveal>
-
     </section>
 
 
