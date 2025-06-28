@@ -1,5 +1,4 @@
 <script setup>
-
 const currentIndex = ref(0)
 let interval
 
@@ -26,6 +25,19 @@ const images = ref([
   {src: "/images/gallery-3/brick-black.webp", alt: "New black gutters on a brick house"},
   {src: "/images/gallery-3/both-corners.webp", alt: "Two example gutter corners"},
 ])
+
+const contactMessage = ref('')
+
+const chooseCorner = (corner) => {
+  const el = document.getElementById('contact')
+  const options = {
+    'strip-miter': 'I would like "Strip-miter" style corners.',
+    'hand-cut': 'I would like "Hand-cut" style corners'
+  }
+
+  contactMessage.value = options[corner] || 'Unknown Corner Type'
+  el.scrollIntoView({ behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -70,10 +82,11 @@ const images = ref([
     </section>
     <section class="my-20">
       <h2 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Choose Your Corner Style!</h2>
-      <div class="flex w-full flex-col lg:flex-row justify-center items-center md:items-start mt-10">
-        <div class="card bg-white w-96 md:w-1/3 shadow-lg text-gray-900">
+      <div class="flex w-full flex-col md:flex-row justify-center items-center md:items-start mt-10">
+        <div class="card rounded-none bg-white w-96 md:w-1/3 text-gray-900">
           <figure>
             <img
+              class="rounded-xl"
               src="/images/gallery-3/hand-cut-corner.webp"
               alt="A hand cut miter corner on a gutter" />
           </figure>
@@ -83,16 +96,17 @@ const images = ref([
               This option offers a clean, professional look that’s often preferred for its craftsmanship and tighter fit.
               It’s a great choice if you want the most polished appearance possible with fewer seams and a higher-end finish.</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">Choose This Corner</button>
+              <button @click="chooseCorner('hand-cut')" class="btn btn-primary">Choose This Corner</button>
             </div>
           </div>
         </div>
 
-        <div class="divider divider-primary text-primary lg:divider-horizontal">OR</div>
+        <div class="divider divider-primary text-primary md:divider-horizontal">OR</div>
 
-        <div class="card bg-white w-96 md:w-1/3 shadow-lg text-gray-900">
+        <div class="card rounded-none bg-white w-96 md:w-1/3 text-gray-900">
           <figure>
             <img
+              class="rounded-xl"
               src="/images/gallery-3/strip-miter-corner.webp"
               alt="a gutter with a strip miter corner" />
           </figure>
@@ -102,7 +116,7 @@ const images = ref([
             consistent look across all corners and can help reduce installation time. While slightly more visible at the joint,
             it's a reliable and cost-effective option.</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">Choose This Corner</button>
+              <button @click="chooseCorner('strip-miter')" class="btn btn-primary">Choose This Corner</button>
             </div>
           </div>
         </div>    
@@ -138,7 +152,7 @@ const images = ref([
       </div>
     </section> -->
 
-    <LazyContact id="contact" />
+    <LazyContact id="contact" :message="contactMessage" />
       
   </main>
 </template>

@@ -2,6 +2,17 @@
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/vue/24/outline'
 import * as yup from 'yup'
 
+const props = defineProps({
+  message: {
+    type: String,
+    default: ''
+  }
+})
+
+watch(() => props.message, (newMessage) => {
+  form.value.message = newMessage
+})
+
 const form = ref({
   name: '',
   email: '',
@@ -9,7 +20,7 @@ const form = ref({
   city: '',
   state: 'WA',
   phone: '',
-  message: ''
+  message: props.message
 })
 
 const errors = ref({})
@@ -22,10 +33,12 @@ const resetForm = () => {
     email: '',
     address: '',
     city: '',
-    state: '',
+    state: 'WA',
     phone: '',
-    message: ''
+    message: props.message
   }
+
+  props.message = ''
 }
 
 const formSchema = yup.object({
