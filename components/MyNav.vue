@@ -28,6 +28,18 @@ const goHome = async () => {
   await navigateTo('/')
 }
 
+const handleClickOutside = (event) => {
+  if (serviceMenu.value && !serviceMenu.value.contains(event.target)) {
+    console.log('handled!')
+    serviceMenu.value.open = false
+    document.removeEventListener('click', handleClickOutside)
+  }
+}
+
+const listenForClose = () => {
+  document.addEventListener('click', handleClickOutside)
+}
+
 onMounted(() => {
   const elements = tabs.map(id => document.getElementById(id)).filter(Boolean);
 
@@ -97,7 +109,7 @@ const scrollToSection = (tab) => {
                 <li><a>Item 2</a></li>
               </ul> -->
 
-              <details ref="serviceMenu" class="dropdown dropdown-bottom"
+              <details ref="serviceMenu" @click="listenForClose" class="dropdown dropdown-bottom"
               :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
                activeTab === 'services' ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
                 <summary tabindex="0" role="button" class="m-1">Services</summary>

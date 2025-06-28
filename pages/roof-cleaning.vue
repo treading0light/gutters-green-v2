@@ -95,7 +95,12 @@ defineOgImageComponent('GutterOg', {
           <div class="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
               <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Professional Roof Cleaning In Federal Way, WA.</h1>
-              <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">Roof moss removal, roof blow, gutter cleaning and repairs</p>
+              <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">At <strong>The Gutters Green</strong>, we provide thorough, professional 
+                <strong>roof cleaning services</strong> designed to protect your home and extend the life of your roof. 
+                From <strong>moss removal</strong> and <strong>roof blowing</strong> to full <strong>gutter cleaning</strong> 
+                and <strong>minor repairs</strong>, our team ensures your roofing system stays clear and functional year-round.
+                 We take pride in delivering safe, effective results using the right tools and techniques to keep your roof looking 
+                 its best and working as it should.</p>
               <div class="mt-10 flex items-center gap-x-6">
                 <a href="#contact" class="btn btn-primary">Free Quote!</a>
                 <a href="#method" class="text-sm/6 font-semibold text-gray-900">Learn about our cleaning method <span aria-hidden="true">→</span></a>

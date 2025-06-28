@@ -82,7 +82,8 @@ const chooseCorner = (corner) => {
     </section>
     <section class="my-20">
       <h2 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Choose Your Corner Style!</h2>
-      <div class="flex w-full flex-col md:flex-row justify-center items-center md:items-start mt-10">
+      <ScrollReveal>
+            <div class="flex w-full flex-col md:flex-row justify-around items-center md:items-start mt-10">
         <div class="card rounded-none bg-white w-96 md:w-1/3 text-gray-900">
           <figure>
             <img
@@ -121,6 +122,8 @@ const chooseCorner = (corner) => {
           </div>
         </div>    
       </div>
+      </ScrollReveal>
+
     </section>
 
 

@@ -63,9 +63,7 @@
             </div>
         </div>
 
-        <!-- <LazyReviews /> -->
-        
-        <LazyMiniService id="services" />
+            <LazyMiniService id="services" />
 
         <LazyAbout id="about" />
 

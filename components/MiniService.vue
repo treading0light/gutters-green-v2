@@ -56,24 +56,27 @@
         </div>
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            <div v-for="(feature, index) in features" :key="feature.name" class="flex flex-col">
+              <div v-for="(feature, index) in features" :key="feature.name" class="flex flex-col">
+                <ScrollReveal>
 
-              <div class="aspect-w-16 aspect-h-9">
-                <NuxtLink :to="feature.href"><img :src="feature.image" :alt="feature.description" class="rounded-xl object-cover" /> </NuxtLink>
+                <div class="aspect-w-16 aspect-h-9">
+                  <NuxtLink :to="feature.href"><img :src="feature.image" :alt="feature.description" class="rounded-xl object-cover" /> </NuxtLink>
+                </div>
+
+                <h2 class="mt-6 text-2xl font-semibold text-gray-900">{{ feature.name }}</h2>
+                <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
+                  <p class="flex-auto">{{ feature.description }}</p>
+                  <div class="flex justify-between mt-6">
+                    <p class="">
+                      <a :href="feature.href" class="text-sm/6 font-semibold text-secondary">{{ feature.linkText }} <span aria-hidden="true">→</span></a>
+                    </p>
+                    <button class="btn btn-primary" @click="updateQueryWithHash(feature.name)">Book This Service</button>
+                  </div>
+                </dd>
+                            </ScrollReveal>
+
               </div>
 
-              <h2 class="mt-6 text-2xl font-semibold text-gray-900">{{ feature.name }}</h2>
-              <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
-                <p class="flex-auto">{{ feature.description }}</p>
-                <div class="flex justify-between mt-6">
-                  <p class="">
-                    <a :href="feature.href" class="text-sm/6 font-semibold text-secondary">{{ feature.linkText }} <span aria-hidden="true">→</span></a>
-                  </p>
-                  <button class="btn btn-primary" @click="updateQueryWithHash(feature.name)">Book This Service</button>
-                </div>
-               
-              </dd>
-            </div>
           </dl>
         </div>
       </div>
