@@ -96,19 +96,6 @@ const scrollToSection = (tab) => {
 
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
 
-              <!-- <button @click="handleTabChange('services')"
-              popovertarget="popover-1" style="anchor-name:--anchor-1"
-              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
-               activeTab === 'services' ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
-               Services
-              </button>
-
-              <ul class="dropdown menu w-52 rounded-box bg-gray-200 shadow-sm"
-                popover id="popover-1" style="position-anchor:--anchor-1">
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
-              </ul> -->
-
               <details ref="serviceMenu" @click="listenForClose" class="dropdown dropdown-bottom"
               :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
                activeTab === 'services' ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
@@ -125,7 +112,7 @@ const scrollToSection = (tab) => {
                Contact
               </a>
 
-              <a v-for="(tab, index) in pageTabs" @click.prevent="handleTabChange(tab)"
+              <a v-for="(tab, index) in pageTabs" :key="index" @click.prevent="handleTabChange(tab)"
               :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium hover:cursor-pointer',
                activeTab === tab ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
                {{  captilize(tab) }}

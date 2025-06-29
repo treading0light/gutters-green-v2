@@ -53,6 +53,10 @@ if (doc.value) {
             <ContentRenderer :value="doc" />
         </article>
 
+        <article class="text-2xl text-gray-700 ">
+
+        </article>
+
         <CTA />
     </main>
   </template>

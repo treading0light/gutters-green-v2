@@ -66,7 +66,7 @@
       </div>
 
       <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-        <img class="w-[10%] md:w-[38rem] lg:w-[57rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10" src="/images/gutter-carry.jpeg" alt="A man carrying a 46 foot gutter up a ladder." />
+        <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="/images/gutter-carry.jpeg" alt="A man carrying a 46 foot gutter up a ladder." />
       </div>
     </div>
 
