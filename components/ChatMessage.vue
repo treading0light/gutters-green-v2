@@ -1,36 +1,35 @@
 <script setup>
 const props = defineProps({
-    sender: {
+    role: {
         type: String,
         default: 'user'
     },
-    message: {
+    content: {
         type: String,
-        default: 'I regret betraying you obi wan!'
     }
 })
 </script>
 
 <template>
 <div>
-    <div v-if="sender == 'assistant'" class="chat chat-start">
+    <div v-if="role == 'assistant'" class="chat chat-start">
     <div class="chat-image avatar">
         <div class="w-10 rounded-full">
         <img
             alt="Tailwind CSS chat bubble component"
-            src="https://img.daisyui.com/images/profile/demo/kenobee@192.webp"
+            src="/images/myself.webp"
         />
         </div>
     </div>
     <div class="chat-header">
-        Obi-Wan Kenobi
+        Assistant
         <time class="text-xs opacity-50">12:45</time>
     </div>
-    <div class="chat-bubble">You were the Chosen One!</div>
+    <div class="chat-bubble">{{ content }}<span v-if="content == ''" class="loading loading-dots loading-md"></span></div>
     <div class="chat-footer opacity-50">Delivered</div>
 </div>
 
-        <div v-if="sender == 'user'" class="chat chat-end">
+        <div v-if="role == 'user'" class="chat chat-end">
     <div class="chat-image avatar">
         <div class="w-10 rounded-full">
         <img
@@ -43,7 +42,7 @@ const props = defineProps({
         Anakin
         <time class="text-xs opacity-50">12:46</time>
     </div>
-    <div class="chat-bubble">{{ message }}</div>
+    <div class="chat-bubble">{{ content }}</div>
     <div class="chat-footer opacity-50">Seen at 12:46</div>
 </div>
 </div>

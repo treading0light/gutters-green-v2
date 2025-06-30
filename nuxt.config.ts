@@ -28,7 +28,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@vueuse/nuxt',
     'nuxt-nodemailer',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    'nuxt-security'
   ],
   nodemailer: {
     from: '"Tony Green" <tonygreen@theguttersgreen.com>',
@@ -38,6 +39,16 @@ export default defineNuxtConfig({
     auth: {
       user: 'tonygreen@theguttersgreen.com',
       pass: ''
+    }
+  },
+  routeRules: {
+    '/api/ask': {
+      security: {
+        rateLimiter: {
+          tokensPerInterval: 10,
+          interval: 3600000
+        }
+      }
     }
   }
 })

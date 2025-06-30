@@ -10,14 +10,36 @@ const classMap = {
 }
 
 const messages = ref([
-    { 'sender': 'assistant' },
-    { 'sender': 'user' },
+    { 'role': 'assistant', 'content': 'Hello, I am an AI assistant created to assist you with your project. How can I help you?' },
 ])
 
-const sendMessage = (event) => {
-    if (!event.shiftKey) {
-        messages.value.push({ 'sender': 'user', 'message': newMessage.value })
+const sendMessage = async (event) => {
+    if (!event.shiftKey && newMessage.value != '') {
+        messages.value.push({ 'role': 'user', 'content': newMessage.value }, {'role': 'assistant', 'content': ''})
         newMessage.value = ''
+        try {
+            const data = await $fetch('/api/ask', {
+                method: 'POST',
+                body: { messages: messages.value }
+            })
+
+            console.log(data.output)
+            messages.value[messages.value.length - 1].content = data.output
+        } catch (error) {
+            if (error?.response?.status === 429) {
+                messages.value.push({
+                role: 'assistant',
+                content: "You've reached your hourly limit of AI messages. If you'd like your own private AI Assistant, send an email to tonygreen@theguttersgreen.com and I can build you one."
+                })
+            } else {
+                console.error('API Error:', error)
+                messages.value.push({
+                role: 'assistant',
+                content: "Sorry, something went wrong. Please try again shortly."
+                })
+            }
+        }
+ 
     }
 }
 
@@ -45,7 +67,7 @@ watch(messages.value, async () => {
             </div>
 
             <div ref="scrollBox" class="overflow-y-auto">
-                <ChatMessage v-for="mes in messages" :sender="mes.sender" :message="mes.message" />           
+                <ChatMessage v-for="mes in messages" :role="mes.role" :content="mes.content" />           
             </div>
 
 
