@@ -5,7 +5,7 @@
         { property: 'og:url', content: 'https://www.theguttersgreen.com/about' },
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'About' },
-        { property: 'og:description', content: 'Information about The Gutters Green, LLC.' },
+        { property: 'og:description', content: 'Information about The Gutters Green' },
     ]
     })
 
@@ -39,7 +39,7 @@
           <div class="lg:max-w-lg">
             <p class="text-base/7 font-semibold text-secondary">About Us</p>
             <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">The Company</h1>
-            <p class="mt-6 text-xl/8 text-gray-700">The Gutters Green LLC specializes in the professional installation of seamless gutters, gutter repairs, modifications, gutter cleaning, and roof cleaning. With over a decade of hands-on experience, I’ve developed expertise in all aspects of gutter systems, ensuring high-quality service and customer satisfaction.</p>
+            <p class="mt-6 text-xl/8 text-gray-700">The Gutters Green specializes in the professional installation of seamless gutters, gutter repairs, modifications, gutter cleaning, and roof cleaning. With over a decade of hands-on experience, I’ve developed expertise in all aspects of gutter systems, ensuring high-quality service and customer satisfaction.</p>
             <h2 class="mt-6 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">My Story</h2>
             <p class="mt-8 text-xl/8 text-gray-700">My journey in the gutter industry began in 2012 when I worked for a leading gutter material supplier. This role allowed me to become well-versed in all aspects of gutter components, accessories, and terminology. More importantly, it introduced me to the skilled professionals who make up the backbone of this industry—the gutter installers.</p>
             <p class="mt-8 text-xl/8 text-gray-700">In 2015, I joined a prestigious gutter and roof cleaning company, where I received advanced fall protection training, a skill set that has been foundational throughout my career. It was during this time that I discovered my passion for delivering more than just a service—I enjoyed creating a memorable and positive experience for every customer.</p>
@@ -60,7 +60,7 @@
 
             <h2 class="mt-16 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">Today</h2>
             <p class="mt-6 text-xl/8 text-gray-700">Every step of my journey has been a learning experience. I’ve absorbed invaluable insights from the long-standing generation of gutter professionals and the innovative ideas of new entrants to the field. These experiences have shaped my expertise and refined the high standards I uphold today.</p>
-            <p class="mt-6 text-xl/8 text-gray-700">At The Gutters Green LLC, I combine this wealth of knowledge with a commitment to providing reliable, professional, and customer-focused service.</p>
+            <p class="mt-6 text-xl/8 text-gray-700">At The Gutters Green, I combine this wealth of knowledge with a commitment to providing reliable, professional, and customer-focused service.</p>
           </div>
         </div>
       </div>

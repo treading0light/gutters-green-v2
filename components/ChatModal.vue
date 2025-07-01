@@ -25,21 +25,38 @@ const sendMessage = async (event) => {
 
             console.log(data.output)
             messages.value[messages.value.length - 1].content = data.output
+            if (messages.value.length == 3) {
+                logChat(messages.value)
+            }
         } catch (error) {
             if (error?.response?.status === 429) {
-                messages.value.push({
-                role: 'assistant',
-                content: "You've reached your hourly limit of AI messages. If you'd like your own private AI Assistant, send an email to tonygreen@theguttersgreen.com and I can build you one."
-                })
+                messages.value[messages.value.length - 1].content = "You've reached your hourly limit of AI messages. If you'd like your own private AI Assistant, send an email to tonygreen@theguttersgreen.com and I can build you one."
+                logChat(messages.value)
             } else {
                 console.error('API Error:', error)
-                messages.value.push({
-                role: 'assistant',
-                content: "Sorry, something went wrong. Please try again shortly."
-                })
+                messages.value[messages.value.length - 1].content = "Sorry, something went wrong. Please try again shortly."
             }
         }
  
+    }
+}
+
+const logChat = async (msgArray) => {
+    try {
+    const response = await $fetch('/api/log-chat', {
+        method: 'POST',
+        body: {
+        messages: msgArray
+        }
+    });
+
+    console.log('Transcript sent:', response.message);
+    } catch (error) {
+    if (error?.data?.message) {
+        console.error('Server error:', error.data.message);
+    } else {
+        console.error('Unexpected error sending transcript:', error);
+    }
     }
 }
 
