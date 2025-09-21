@@ -63,7 +63,9 @@
             </div>
         </div>
 
-            <LazyMiniService id="services" />
+        <LazyMiniService id="services" />
+
+        <LazyServiceAreaSection />
 
         <LazyAbout id="about" />
 

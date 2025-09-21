@@ -8,10 +8,21 @@ const areaSlug = Array.isArray(route.params.area)
   ? route.params.area[0]
   : route.params.area
 
-// Pick city or default to federal-way
-const areaInfo = computed(() =>
-  areaSlug ? getArea(areaSlug as string) : getArea('federal-way')
-)
+// Pick city/county or fallback
+const areaInfo = computed(() => {
+  if (areaSlug) {
+    const hit = getArea(areaSlug as string)
+    if (hit) {
+      return hit
+    } else {
+      // redirect if invalid slug
+      navigateTo('/gutter-installation', { replace: true })
+      return getArea('federal-way') // safe fallback while redirecting
+    }
+  } else {
+    return getArea('federal-way')
+  }
+})
 
 const currentIndex = ref(0)
 let interval: ReturnType<typeof setInterval>
@@ -55,10 +66,13 @@ const chooseCorner = (corner: 'strip-miter' | 'hand-cut') => {
   el.scrollIntoView({ behavior: 'smooth' })
 }
 
-useHead({
+const url = areaSlug ? `https://www.theguttersgreen.com/gutter-installation/${areaSlug}` : 'https://www.theguttersgreen.com/gutter-installation'
+
+useHead(
+  {
   title: 'Seamless Gutter Installation Service | The Gutters Green',
   meta: [
-      { property: 'og:url', content: 'https://www.theguttersgreen.com/gutter-installation' },
+      { property: 'og:url', content: url },
       { property: 'og:type', content: 'website' },
       { property: 'og:title', content: 'Professional Gutter Installation In Seattle And Tacoma' },
       { property: 'og:description', content: 'Protect your home with expert gutter installation services by The Gutters Green' },
@@ -70,7 +84,7 @@ useHead({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "The Gutters Green",
-      "url": "https://www.theguttersgreen.com/gutter-installation",
+      "url": url,
       "telephone": "+12532484670",
       "address": {
         "@type": "PostalAddress",
@@ -80,7 +94,7 @@ useHead({
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://www.theguttersgreen.com/gutter-installation"
+        "@id": url
       },
       "areaServed": "King County, Pierce County",
       "description": "Protect your home with expert roof cleaning and moss removal services by The Gutters Green",
@@ -97,7 +111,8 @@ useHead({
     })
   }
   ]
-})
+}
+)
 
 defineOgImageComponent('GutterOg', {
   title: "Seamless Gutter Installation & Replacement",
@@ -193,6 +208,10 @@ defineOgImageComponent('GutterOg', {
         </div>    
       </div>
     </section>
+
+    <ScrollReveal>
+      <LazyServiceAreaSection serviceSlug="gutter-installation"/>
+    </ScrollReveal>
 
 
     <!-- <section class="hero bg-white min-h-screen text-gray-900">
