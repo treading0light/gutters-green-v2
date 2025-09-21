@@ -1,6 +1,20 @@
-<script setup>
+<script setup lang="ts">
+
+const route = useRoute()
+const { getArea } = useServiceAreas('gutter-installation')
+
+// Ensure slug is a string
+const areaSlug = Array.isArray(route.params.area)
+  ? route.params.area[0]
+  : route.params.area
+
+// Pick city or default to federal-way
+const areaInfo = computed(() =>
+  areaSlug ? getArea(areaSlug as string) : getArea('federal-way')
+)
+
 const currentIndex = ref(0)
-let interval
+let interval: ReturnType<typeof setInterval>
 
 onMounted(() => {
     interval = setInterval(() => {
@@ -28,14 +42,16 @@ const images = ref([
 
 const contactMessage = ref('')
 
-const chooseCorner = (corner) => {
+const chooseCorner = (corner: 'strip-miter' | 'hand-cut') => {
   const el = document.getElementById('contact')
-  const options = {
+  if (!el) return // safety in case element doesn't exist
+
+  const options: Record<'strip-miter' | 'hand-cut', string> = {
     'strip-miter': 'I would like "Strip-miter" style corners.',
-    'hand-cut': 'I would like "Hand-cut" style corners'
+    'hand-cut': 'I would like "Hand-cut" style corners.',
   }
 
-  contactMessage.value = options[corner] || 'Unknown Corner Type'
+  contactMessage.value = options[corner] ?? 'Unknown Corner Type'
   el.scrollIntoView({ behavior: 'smooth' })
 }
 
@@ -103,8 +119,8 @@ defineOgImageComponent('GutterOg', {
 
           <div class="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-              <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Professional Gutter Installation In Federal Way, WA.</h1>
-              <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">At The Gutters Green, we specialize in seamless 5K gutters that prevent water damage, protect your foundation, and enhance curb appeal. Whether you need <strong>new gutter installation</strong>, <strong>gutter replacement</strong>, or a custom drainage solution, our team delivers reliable results with top-quality materials and professional care.</p>
+              <h1 class="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl" v-html="areaInfo?.heroTitle"></h1>
+              <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8" v-html="areaInfo?.heroText"></p>
               <div class="mt-10 flex items-center gap-x-6">
                 <a href="#contact" class="btn btn-primary">Free Quote!</a>
                 <a href="#" class="text-sm/6 font-semibold text-gray-900">Learn about new gutters <span aria-hidden="true">→</span></a>
