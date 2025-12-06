@@ -87,14 +87,14 @@ const scrollToSection = (tab) => {
 
 <template>
     <Disclosure as="nav" class="bg-gray-100 sticky top-0 z-50 shadow " v-slot="{ open }">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-        <div class="flex h-16 justify-between">
-          <div class="flex">
-            <div @click.prevent="goHome" class="flex shrink-0 items-center">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2">
+        <div class="flex h-28 w-full">
+          <div class="flex w-full">
+            <div @click.prevent="goHome" class="flex shrink-0 items-center justify-self-start">
               <MyLogo />
             </div>
 
-            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div class="hidden sm:ml-6 sm:flex sm:space-x-8 justify-self-center">
 
               <details ref="serviceMenu" @click="listenForClose" class="dropdown dropdown-bottom"
               :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-lg font-medium',

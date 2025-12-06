@@ -37,7 +37,7 @@
 </script>
 
 <template>
-    <div id="phoneModal" class="fixed sm:block w-fit top-[100px] left-[45%] sm:left-[70%] text-white z-50 text-2xl
+    <div id="phoneModal" class="fixed sm:block w-fit top-[150px] left-[45%] sm:left-[70%] text-white z-50 text-2xl
     bg-secondary p-3 rounded-xl bg-opacity-50 hover:bg-opacity-100 transition-transform duration-500">
         <a href="tel:253-248-4670">253-248-4670</a>
     </div>
