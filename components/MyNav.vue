@@ -87,7 +87,7 @@ const scrollToSection = (tab) => {
 
 <template>
     <Disclosure as="nav" class="bg-gray-100 sticky top-0 z-50 shadow " v-slot="{ open }">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex h-16 justify-between">
           <div class="flex">
             <div @click.prevent="goHome" class="flex shrink-0 items-center">
@@ -97,7 +97,7 @@ const scrollToSection = (tab) => {
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
 
               <details ref="serviceMenu" @click="listenForClose" class="dropdown dropdown-bottom"
-              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
+              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-lg font-medium',
                activeTab === 'services' ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
                 <summary tabindex="0" role="button" class="m-1">Services</summary>
                 <ul tabindex="0" class="dropdown-content menu bg-white rounded-box z-1 w-52 p-5 shadow-lg">
@@ -107,13 +107,13 @@ const scrollToSection = (tab) => {
               </details>
 
               <a href="#contact"
-              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium',
+              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-lg font-medium',
                activeTab === 'contact' ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
                Contact
               </a>
 
               <a v-for="(tab, index) in pageTabs" :key="index" @click.prevent="handleTabChange(tab)"
-              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-sm font-medium hover:cursor-pointer',
+              :class="['inline-flex items-center border-b-2 text-gray-700 border-primary px-1 pt-1 text-lg font-medium hover:cursor-pointer',
                activeTab === tab ? 'border-primary text-gray-900' : 'border-transparent hover:border-gray-300 hover:text-gray-700']">
                {{  captilize(tab) }}
               </a>

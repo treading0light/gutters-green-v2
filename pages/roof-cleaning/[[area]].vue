@@ -13,7 +13,7 @@ const areaInfo = computed(() => {
   if (areaSlug) {
     const hit = getArea(areaSlug as string)
     if (hit) {
-      return hit
+      return hit  
     } else {
       // redirect if invalid slug
       navigateTo('/roof-cleaning', { replace: true })
