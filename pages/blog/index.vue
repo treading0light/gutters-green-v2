@@ -2,11 +2,10 @@
 
 
 const { data: posts } = await useAsyncData('blog', () =>
-  queryContent('/')
-    .without(['body'])
-    .where({ published: true })
-    .sort({ date: -1 })
-    .find()
+  queryCollection('blog')
+    .where('published', '=', true)
+    .order('date', 'DESC')
+    .all()
 );
 
 useHead({
@@ -44,8 +43,8 @@ useHead({
 
           <article v-for="(post, index) in posts" :key="`post${index}`" class="flex flex-col items-start justify-between">
           <div class="relative w-full">
-            <NuxtLink :to="post._path">
-              <img :src="`/images${post._path}/${post.thumbnail}`" :alt="post.mainImageAlt" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
+            <NuxtLink :to="post.path">
+              <img :src="`/images${post.path}/${post.thumbnail}`" :alt="post.mainImageAlt" class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
               <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" ></div>
             </NuxtLink>
 
@@ -57,7 +56,7 @@ useHead({
             </div>
             <div class="group relative">
               <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                <NuxtLink :to="post._path" class="">
+                <NuxtLink :to="post.path" class="">
                   {{ post.title }}
                 </NuxtLink>
               </h3>

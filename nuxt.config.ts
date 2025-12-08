@@ -50,5 +50,12 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'script-src': ["'self'", "'unsafe-inline'", "'strict-dynamic'", "'nonce-{{nonce}}'", "'wasm-unsafe-eval'"]
+      }
+    }
   }
 })
