@@ -3,9 +3,10 @@ const route = useRoute()
 const slug = route.params.slug as string
 
 const { data: doc } = await useAsyncData('blog/' + slug, () =>
-  queryContent('/blog/' + slug)
-    .where({ published: true })
-    .findOne()
+  queryCollection('blog')
+    .path(`/blog/${slug}`)
+    .where('published', '=', true)
+    .first()
 );
 
 useHead({
@@ -36,7 +37,7 @@ if (doc.value) {
 
         <div  class="bg-white py-10">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <img :src="`/images${doc._path}/${doc.mainImage}`" :alt="doc.mainImageAlt"
+                <img :src="`/images${doc.path}/${doc.mainImage}`" :alt="doc.mainImageAlt"
                 class="aspect-video rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] lg:w-2/3 lg:mx-auto"/>
                 <div class="mx-auto max-w-2xl lg:mx-0">
                     <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ doc.title }}</h2>
