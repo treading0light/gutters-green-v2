@@ -18,7 +18,7 @@
     script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "The Gutters Green",
@@ -66,6 +66,8 @@
         <LazyMiniService id="services" />
 
         <LazyServiceAreaSection />
+
+        <LazyReviews />
 
         <LazyAbout id="about" />
 
