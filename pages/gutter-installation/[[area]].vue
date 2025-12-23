@@ -68,14 +68,36 @@ const chooseCorner = (corner: 'strip-miter' | 'hand-cut') => {
 
 const url = areaSlug ? `https://www.theguttersgreen.com/gutter-installation/${areaSlug}` : 'https://www.theguttersgreen.com/gutter-installation'
 
+// Dynamic title and description based on area
+const pageTitle = computed(() => {
+  const area = areaInfo.value
+  if (!area) return 'Seamless Gutter Installation Service | The Gutters Green'
+  return `Professional Gutter Installation in ${area.name}, WA | The Gutters Green`
+})
+
+const pageDescription = computed(() => {
+  const area = areaInfo.value
+  if (!area) return 'Protect your home with expert gutter installation services by The Gutters Green in the Seattle-Tacoma area.'
+  // Strip HTML tags from heroText for meta description
+  const plainText = area.heroText?.replace(/<[^>]*>/g, '') || ''
+  // Truncate to ~160 characters for optimal SEO
+  return plainText.length > 160 ? plainText.substring(0, 157) + '...' : plainText
+})
+
+const serviceAreaName = computed(() => {
+  const area = areaInfo.value
+  return area?.name || 'King County, Pierce County'
+})
+
 useHead(
   {
-  title: 'Seamless Gutter Installation Service | The Gutters Green',
+  title: pageTitle,
   meta: [
+      { name: 'description', content: pageDescription },
       { property: 'og:url', content: url },
       { property: 'og:type', content: 'website' },
-      { property: 'og:title', content: 'Professional Gutter Installation In Seattle And Tacoma' },
-      { property: 'og:description', content: 'Protect your home with expert gutter installation services by The Gutters Green' },
+      { property: 'og:title', content: pageTitle },
+      { property: 'og:description', content: pageDescription },
   ],
   script: [
   {
@@ -96,17 +118,17 @@ useHead(
         "@type": "WebPage",
         "@id": url
       },
-      "areaServed": "King County, Pierce County",
-      "description": "Protect your home with expert roof cleaning and moss removal services by The Gutters Green",
+      "areaServed": serviceAreaName.value,
+      "description": pageDescription.value,
       "image": "https://www.theguttersgreen.com/logo.png",
       "service": {
         "@type": "Service",
         "name": "Gutter Installation",
-        "areaServed": [
-          { "@type": "Place", "name": "King County" },
-          { "@type": "Place", "name": "Pierce County" }
-        ],
-        "description": "We provide expert gutter installation services, made on site to fit your home."
+        "areaServed": {
+          "@type": "Place",
+          "name": serviceAreaName.value
+        },
+        "description": `We provide expert gutter installation services in ${serviceAreaName.value}, made on site to fit your home.`
       }
     })
   }
