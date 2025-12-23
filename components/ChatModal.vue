@@ -90,7 +90,7 @@ watch(messages.value, async () => {
 
 
 
-        <textarea v-model="newMessage" @keydown.enter.prevent="sendMessage" class="textarea w-full" placeholder="Bio"></textarea>
+        <textarea v-model="newMessage" @keydown.enter.prevent="sendMessage" class="textarea w-full" placeholder="Chat"></textarea>
         </div>
 
         <div v-show="currentSize == 'small'">
