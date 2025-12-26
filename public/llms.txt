@@ -1,0 +1,105 @@
+# The Gutters Green
+
+> Professional gutter installation, cleaning, and roof cleaning services serving the Seattle-Tacoma area (King and Pierce Counties). Family-owned business by Tony Green with 10+ years of experience, specializing in seamless 5K gutters, moss removal, and gutter repairs. Licensed contractor (GUTTEGG750DQ) based in Federal Way, WA. Phone: (253) 248-4670 | Email: tonygreen@theguttersgreen.com
+
+The Gutters Green is a full-service gutter and roof maintenance company protecting homes across the greater Seattle-Tacoma metropolitan area. We provide expert seamless gutter installation cut and formed on-site to perfectly fit your home, professional gutter and roof cleaning services, and reliable gutter repair work.
+
+Our signature product is the seamless 5K profile gutter system, custom-measured and installed with your choice of two corner styles: hand-cut miters for a premium craftsman finish, or strip miters for a cost-effective standard installation. All work is performed by experienced technicians with advanced fall protection training.
+
+For roof cleaning, we use a proven 5-step process: gentle moss brushing, complete debris removal, thorough gutter cleaning, application of rainfall-activated powdered moss treatment, and ongoing maintenance guidance. We serve over 50 cities across King and Pierce Counties with area-specific service pages for each location.
+
+## Main Pages
+
+[Home](https://www.theguttersgreen.com/): Main landing page with service overview, customer reviews, and contact form
+[About](https://www.theguttersgreen.com/about): Company history and owner Tony Green's background, 10+ years industry experience
+[FAQ](https://www.theguttersgreen.com/faq): Seven common questions about gutter services, installation timelines, and cleaning recommendations
+[Blog](https://www.theguttersgreen.com/blog): All published articles about gutter and roof maintenance
+[Contact](https://www.theguttersgreen.com/#contact): Quote request form with name, email, address, phone, and service details
+
+## Service Pages
+
+[Gutter Installation](https://www.theguttersgreen.com/gutter-installation): Seamless 5K gutter installation services with corner style selection
+[Roof Cleaning](https://www.theguttersgreen.com/roof-cleaning): Roof moss removal and treatment process with before/after examples
+[Gutter Installation - Federal Way](https://www.theguttersgreen.com/gutter-installation/federal-way): Default service area page example showing dynamic area content
+[Roof Cleaning - Seattle](https://www.theguttersgreen.com/roof-cleaning/seattle): Seattle-specific roof cleaning services page
+
+## Blog Content
+
+[Top 3 Causes of Gutter Overflow](https://www.theguttersgreen.com/blog/top-3-causes-of-gutter-overflow): Comprehensive guide covering full gutters, clogged downspouts, and improper slope issues (Feb 1, 2025)
+[An Introduction To Your Local Gutter Guy](https://www.theguttersgreen.com/blog/an-introduction-to-your-local-gutter-guy): Tony Green's background and professional experience (Mar 16, 2020)
+
+## Technical Documentation
+
+[CLAUDE.md](CLAUDE.md): Project overview and development guide for AI assistants working with the codebase
+[README.md](README.md): Setup instructions and project documentation (if exists)
+[nuxt.config.ts](nuxt.config.ts): Nuxt configuration including modules, SEO settings, and deployment configuration
+[package.json](package.json): Dependencies and build scripts for the Nuxt 3 application
+
+## Service Areas
+
+King County cities served: Algona, Auburn, Beaux Arts Village, Bellevue, Black Diamond, Bothell, Burien, Carnation, Clyde Hill, Covington, Des Moines, Duvall, Enumclaw, Federal Way, Hunts Point, Issaquah, Kenmore, Kent, Kirkland, Lake Forest Park, Maple Valley, Medina, Mercer Island, Milton, Newcastle, Normandy Park, North Bend, Pacific, Redmond, Renton, Sammamish, SeaTac, Seattle, Shoreline, Skykomish, Snoqualmie, Tukwila, Woodinville, Yarrow Point
+
+Pierce County cities served: Auburn, Bonney Lake, Buckley, Carbonado, DuPont, Eatonville, Edgewood, Enumclaw, Fife, Fircrest, Gig Harbor, Lakewood, Milton, Orting, Pacific, Puyallup, Roy, Ruston, South Prairie, Steilacoom, Sumner, Tacoma, University Place, Wilkeson
+
+## API Routes
+
+[POST /api/ask](server/api/ask.post.ts): OpenAI chat integration for customer questions, rate limited to 10 requests/hour, responds only to gutter and roof-related inquiries
+[POST /api/send-email](server/api/send-email.post.js): Contact form submission handler using nodemailer with Gmail SMTP, validates name, email, address, city, state, phone, and message
+[POST /api/log-chat](server/api/log-chat.js): Chat transcript logger that emails conversation history after 3 exchanges (production only)
+[GET /api/get-reviews](server/api/get-reviews.get.js): Review fetching endpoint (placeholder for future integration)
+
+## Key Features
+
+**Service Offerings:**
+- Seamless 5K profile gutter installation with on-site custom cutting
+- Two corner style options: hand-cut miter (premium) and strip miter (standard)
+- Professional roof moss removal and treatment using rainfall-activated powder
+- Gutter repairs including slope correction, corner re-sealing, and re-fastening
+- Complete gutter and downspout cleaning services
+
+**Technology Stack:**
+- Nuxt 3.20.1 with Vue 3 and TypeScript
+- Server-side rendering enabled for SEO
+- Tailwind CSS with DaisyUI component library
+- Nuxt Content v3 for git-based blog CMS
+- OpenAI GPT-3.5-turbo for AI chat support
+- Vercel deployment with rate limiting and security headers
+- Leaflet maps for service area visualization
+
+**Contact Information:**
+- Business Phone: (253) 248-4670
+- Email: tonygreen@theguttersgreen.com
+- Address: Federal Way, WA 98023
+- License: GUTTEGG750DQ (Washington State)
+- Facebook: facebook.com/profile.php?id=61551824939216
+
+**Scheduling and Quotes:**
+Customers can request free quotes through the contact form or AI chat assistant. Installation typically takes 1-2 days depending on home size. Gutter cleaning is recommended twice yearly. Homeowner presence is not required during service.
+
+## Optional
+
+**Development Commands:**
+- `npm install`: Install dependencies
+- `npm run dev`: Development server at localhost:3000
+- `npm run build`: Production build
+- `npm run generate`: Static site generation
+- `npm run preview`: Preview production build
+- `npm run createBlogPost <title>`: Create new blog post with image directory
+
+**Component Library:**
+The site uses custom Vue components including Contact (form with Yup validation), ChatModal (AI chatbot), Reviews (customer testimonials), MiniService (service cards), MethodStory (roof cleaning process walkthrough), ServiceAreaSection (dynamic area display), and ScrollReveal (lazy animations).
+
+**Content Management:**
+Blog posts are markdown files in `/content/blog/` with frontmatter metadata including title, images, description, date, category, author, and published flag. Custom content components available in markdown: MdImg, BeforeAfter, BeforeAfterAlt, MdCarousel, and CTA blocks.
+
+**Structured Data:**
+All pages include Schema.org JSON-LD structured data for LocalBusiness, services, FAQPage, and area-specific information. Dynamic OG images are generated for social sharing using nuxt-og-image.
+
+**Security Features:**
+Content Security Policy headers configured, rate limiting on chat API (10 requests/hour), form validation on frontend and backend, secure SMTP for email, and no sensitive credentials in version control.
+
+**Recent Updates:**
+- Upgraded from Nuxt Content v2 to v3 (Dec 2024)
+- Updated Content Security Policies for logo compatibility (Dec 2024)
+- Added Reviews component to landing page (Dec 2024)
+- Updated favicon designs with transparent backgrounds (Dec 2024)
