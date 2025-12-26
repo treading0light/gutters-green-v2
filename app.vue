@@ -4,5 +4,6 @@
     <NuxtPage />
     <LazyChatModal />
     <LazyMyFooter />
+    <CookieConsent />
   </div>
 </template>

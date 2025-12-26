@@ -2,7 +2,7 @@
     <div to="/" class="flex flex-col hover:cursor-pointer">
         <!-- <p class="text-2xl font-bold">The Gutters</p>
         <p class="text-4xl text-center font-bold">Green</p> -->
-        <NuxtImg src="/logo.png" alt="The Gutters Green Logo" width="150"  />
+        <img src="/logo.png" alt="The Gutters Green Logo" width="150" height="150" loading="eager" />
     </div>
 </template>
 
