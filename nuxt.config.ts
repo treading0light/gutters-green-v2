@@ -54,6 +54,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@nuxt/content', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-nodemailer', 'nuxt-og-image', 'nuxt-security', 'nuxt-studio'],
+  studio: {
+    route: '/_studio',
+    repository: {
+      provider: 'github',
+      owner: process.env.STUDIO_GIT_OWNER || '',
+      repo: process.env.STUDIO_GIT_REPO || 'gutters-green-v2',
+      branch: 'main',
+    }
+  },
   experimental: {
     inlineSSRStyles: true,
   },
@@ -93,7 +102,7 @@ export default defineNuxtConfig({
         'script-src-attr': ["'none'"],
         'style-src': ["'self'", 'https:', "'unsafe-inline'"],
         'script-src': ["'self'", 'https:', "'unsafe-inline'", "'strict-dynamic'", "'nonce-{{nonce}}'", "'wasm-unsafe-eval'", 'https://www.googletagmanager.com'],
-        'connect-src': ["'self'", 'https://www.google-analytics.com', 'https://*.analytics.google.com', 'https://*.googletagmanager.com', 'https://api.github.com'],
+        'connect-src': ["'self'", 'https://www.google-analytics.com', 'https://*.analytics.google.com', 'https://*.googletagmanager.com', 'https://api.github.com', 'https://api.iconify.design', 'https://api.unisvg.com', 'https://api.simplesvg.com'],
         'upgrade-insecure-requests': true
       }
     }
