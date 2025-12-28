@@ -97,7 +97,7 @@ export default defineNuxtConfig({
         'form-action': ["'self'"],
         'frame-ancestors': ["'self'"],
         'frame-src': ["'self'"],
-        'img-src': ["'self'", 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.googletagmanager.com'],
+        'img-src': ["'self'", 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.googletagmanager.com', 'https://avatars.githubusercontent.com', 'https://*.githubusercontent.com'],
         'object-src': ["'none'"],
         'script-src-attr': ["'none'"],
         'style-src': ["'self'", 'https:', "'unsafe-inline'"],
