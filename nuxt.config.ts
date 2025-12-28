@@ -53,16 +53,7 @@ export default defineNuxtConfig({
   }, 
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/image',
-    '@nuxt/content',
-    '@nuxt/icon',
-    '@vueuse/nuxt',
-    'nuxt-nodemailer',
-    'nuxt-og-image',
-    'nuxt-security'
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@nuxt/content', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-nodemailer', 'nuxt-og-image', 'nuxt-security', 'nuxt-studio'],
   experimental: {
     inlineSSRStyles: true,
   },
@@ -96,12 +87,13 @@ export default defineNuxtConfig({
         'font-src': ["'self'", 'https:', 'data:'],
         'form-action': ["'self'"],
         'frame-ancestors': ["'self'"],
+        'frame-src': ["'self'"],
         'img-src': ["'self'", 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.googletagmanager.com'],
         'object-src': ["'none'"],
         'script-src-attr': ["'none'"],
         'style-src': ["'self'", 'https:', "'unsafe-inline'"],
         'script-src': ["'self'", 'https:', "'unsafe-inline'", "'strict-dynamic'", "'nonce-{{nonce}}'", "'wasm-unsafe-eval'", 'https://www.googletagmanager.com'],
-        'connect-src': ["'self'", 'https://www.google-analytics.com', 'https://*.analytics.google.com', 'https://*.googletagmanager.com'],
+        'connect-src': ["'self'", 'https://www.google-analytics.com', 'https://*.analytics.google.com', 'https://*.googletagmanager.com', 'https://api.github.com'],
         'upgrade-insecure-requests': true
       }
     }
