@@ -63,6 +63,12 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     'nuxt-security'
   ],
+  experimental: {
+    inlineSSRStyles: true,
+  },
+  tailwindcss: {
+    viewer: false,
+  },
   nodemailer: {
     from: '"Tony Green" <tonygreen@theguttersgreen.com>',
     host: 'smtp.gmail.com',
