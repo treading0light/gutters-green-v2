@@ -55,7 +55,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@nuxt/content', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-nodemailer', 'nuxt-og-image', 'nuxt-security', 'nuxt-studio'],
   studio: {
-    route: '/_studio',
+    route: '/__nuxt_studio',
     repository: {
       provider: 'github',
       owner: process.env.STUDIO_GIT_OWNER || '',
