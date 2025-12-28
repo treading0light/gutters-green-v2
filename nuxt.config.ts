@@ -55,11 +55,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@nuxt/content', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-nodemailer', 'nuxt-og-image', 'nuxt-security', 'nuxt-studio'],
   studio: {
-    route: '/__nuxt_studio',
+    route: '/admin',
     repository: {
       provider: 'github',
-      owner: process.env.STUDIO_GIT_OWNER || '',
-      repo: process.env.STUDIO_GIT_REPO || 'gutters-green-v2',
+      owner: 'treading0light',
+      repo: 'gutters-green-v2',
       branch: 'main',
     }
   },
