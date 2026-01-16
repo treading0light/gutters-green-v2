@@ -61,6 +61,8 @@ export default defineNuxtConfig({
       owner: 'treading0light',
       repo: 'gutters-green-v2',
       branch: 'main',
+      rootDir: '',
+      private: true,
     }
   },
   experimental: {
@@ -97,12 +99,12 @@ export default defineNuxtConfig({
         'form-action': ["'self'"],
         'frame-ancestors': ["'self'"],
         'frame-src': ["'self'"],
-        'img-src': ["'self'", 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.googletagmanager.com', 'https://avatars.githubusercontent.com', 'https://*.githubusercontent.com'],
+        'img-src': ["'self'", 'data:', 'blob:', 'https://www.google-analytics.com', 'https://*.googletagmanager.com', 'https://avatars.githubusercontent.com', 'https://*.githubusercontent.com', "https://www.healthyfleet.org", "https://*.tile.openstreetmap.org"],
         'object-src': ["'none'"],
         'script-src-attr': ["'none'"],
         'style-src': ["'self'", 'https:', "'unsafe-inline'"],
         'script-src': ["'self'", 'https:', "'unsafe-inline'", "'strict-dynamic'", "'nonce-{{nonce}}'", "'wasm-unsafe-eval'", 'https://www.googletagmanager.com'],
-        'connect-src': ["'self'", 'https://www.google-analytics.com', 'https://*.analytics.google.com', 'https://*.googletagmanager.com', 'https://api.github.com', 'https://api.iconify.design', 'https://api.unisvg.com', 'https://api.simplesvg.com'],
+        'connect-src': ["'self'", 'https://www.google-analytics.com', 'https://*.analytics.google.com', 'https://*.googletagmanager.com', 'https://api.github.com', 'https://api.iconify.design', 'https://api.unisvg.com', 'https://api.simplesvg.com', "https://www.healthyfleet.org", "https://*.tile.openstreetmap.org"],
         'upgrade-insecure-requests': true
       }
     }

@@ -64,6 +64,9 @@
         </div>
 
         <LazyMiniService id="services" />
+        <ClientOnly>
+            <CheckInWidget />
+        </ClientOnly>
 
         <LazyServiceAreaSection />
 
