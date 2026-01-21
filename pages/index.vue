@@ -59,11 +59,17 @@
                         The Gutters Green are your experts for Seamless Gutter installation and Repairs – Delivered with Care and Precision.
                     </p>
                     <button @click="scrollToElement('contact')" class="btn btn-primary">Get a free quote!</button>
+                    <p class="mt-4 text-sm opacity-90">
+                        Licensed & Insured | 10+ Years Experience | Hundreds of Happy Customers
+                    </p>
                 </div>
             </div>
         </div>
 
         <LazyMiniService id="services" />
+
+        <WhyChooseUs />
+
         <ClientOnly>
             <CheckInWidget />
         </ClientOnly>
@@ -73,6 +79,8 @@
         <LazyReviews />
 
         <LazyAbout id="about" />
+
+        <HowItWorks />
 
         <LazyContact id="contact" />
 

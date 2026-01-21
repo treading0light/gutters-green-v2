@@ -59,8 +59,26 @@
           <div class="max-w-xl text-base/7 text-gray-700 lg:max-w-lg">
 
             <h2 class="mt-16 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">Today</h2>
-            <p class="mt-6 text-xl/8 text-gray-700">Every step of my journey has been a learning experience. I’ve absorbed invaluable insights from the long-standing generation of gutter professionals and the innovative ideas of new entrants to the field. These experiences have shaped my expertise and refined the high standards I uphold today.</p>
+            <p class="mt-6 text-xl/8 text-gray-700">Every step of my journey has been a learning experience. I've absorbed invaluable insights from the long-standing generation of gutter professionals and the innovative ideas of new entrants to the field. These experiences have shaped my expertise and refined the high standards I uphold today.</p>
             <p class="mt-6 text-xl/8 text-gray-700">At The Gutters Green, I combine this wealth of knowledge with a commitment to providing reliable, professional, and customer-focused service.</p>
+
+            <div class="mt-16 border-t border-gray-200 pt-16">
+              <h3 class="text-2xl font-bold tracking-tight text-gray-900">By the Numbers</h3>
+              <dl class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="flex flex-col gap-y-3 border-l-4 border-primary pl-6">
+                  <dt class="text-sm/6 text-gray-600">Years of Experience</dt>
+                  <dd class="order-first text-4xl font-semibold tracking-tight text-gray-900">10+</dd>
+                </div>
+                <div class="flex flex-col gap-y-3 border-l-4 border-primary pl-6">
+                  <dt class="text-sm/6 text-gray-600">Happy Customers</dt>
+                  <dd class="order-first text-4xl font-semibold tracking-tight text-gray-900">Hundreds</dd>
+                </div>
+                <div class="flex flex-col gap-y-3 border-l-4 border-primary pl-6">
+                  <dt class="text-sm/6 text-gray-600">Service Coverage</dt>
+                  <dd class="order-first text-4xl font-semibold tracking-tight text-gray-900">King & Pierce Counties</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </div>
       </div>

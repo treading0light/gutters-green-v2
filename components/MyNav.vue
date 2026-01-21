@@ -102,6 +102,7 @@ const scrollToSection = (tab) => {
                 <summary tabindex="0" role="button" class="m-1">Services</summary>
                 <ul tabindex="0" class="dropdown-content menu bg-white rounded-box z-1 w-52 p-5 shadow-lg">
                   <li><a href="/gutter-installation" @click.prevent="servicePage('/gutter-installation')">Gutter Installation</a></li>
+                  <li><a href="/gutter-cleaning" @click.prevent="servicePage('/gutter-cleaning')">Gutter Cleaning</a></li>
                   <li><a href="/roof-cleaning" @click.prevent="servicePage('/roof-cleaning')">Roof Cleaning</a></li>
                 </ul>
               </details>
@@ -154,10 +155,13 @@ const scrollToSection = (tab) => {
           <DisclosureButton disabled :class="['block border-l-4  py-2 pl-3 pr-4  font-bold',
           activeTab === 'services' ? 'border-primary bg-secondary text-gray-800' : 'border-transparent text-base text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700' ]">
           Services
-          </DisclosureButton>     
+          </DisclosureButton>
           <DisclosureButton @click="servicePage('gutter-installation')"
             class="block border-l-4  py-2 pl-3 pr-4  ml-10 font-medium border-transparent text-base text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">
-            Gutter Installation</DisclosureButton>   
+            Gutter Installation</DisclosureButton>
+          <DisclosureButton @click="servicePage('gutter-cleaning')"
+            class="block border-l-4  py-2 pl-3 pr-4  ml-10 font-medium border-transparent text-base text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">
+            Gutter Cleaning</DisclosureButton>
           <DisclosureButton @click="servicePage('roof-cleaning')"
             class="block border-l-4  py-2 pl-3 pr-4  ml-10 font-medium border-transparent text-base text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">
             Roof Cleaning</DisclosureButton> 
